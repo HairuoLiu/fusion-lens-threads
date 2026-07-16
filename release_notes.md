@@ -6,12 +6,12 @@ First stable release. A zero-dependency, cross-platform way to add **lens & filt
 - **73 lens/filter diameters** (24–127 mm) — covers the common 39, 40, 42, 43 mm sizes and many more.
 - **Two pitches per size**: `0.75 mm` (filter threads) and `1.0 mm` (e.g. M42×1 mount), so lenses and step-up rings actually screw in.
 - **External (bolt) + internal (hole)** threads for every size, with correct 6g/6H clearance.
-- One new thread family in Fusion: **"镜头尺寸螺纹规格" (Lens Size Threads)**.
+- One new thread family in Fusion: **"Camera Lens and Filter Threads" (Lens Size Threads)**.
 
 ## Install in ~30 seconds
 1. **macOS**: `bash install_mac.sh`
 2. **Windows (PowerShell)**: `.\install_windows.ps1`
-3. Restart Fusion 360 → *Create › Thread* → pick **镜头尺寸螺纹规格**.
+3. Restart Fusion 360 → *Create › Thread* → pick **Camera Lens and Filter Threads**.
 
 Both installers auto-detect Fusion's `ThreadData` folder (newest version) and drop `LensSizeThreads.xml` there. Manual install and `--dry-run` / `-WhatIf` are documented in the README.
 

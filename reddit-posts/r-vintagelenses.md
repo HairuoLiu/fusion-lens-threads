@@ -11,7 +11,7 @@ For those of us who 3D-print lens adapters, caps, and focale-shift rigs for vint
 Coverage:
 - 73 diameters 24–127 mm, including the all-important M42 mount and 39/42 mm filters.
 - 0.75 mm and 1.0 mm pitch, external + internal, with correct clearance.
-- One Fusion thread family: "镜头尺寸螺纹规格".
+- One Fusion thread family: "Camera Lens and Filter Threads".
 
 Install:
 - macOS:  bash install_mac.sh

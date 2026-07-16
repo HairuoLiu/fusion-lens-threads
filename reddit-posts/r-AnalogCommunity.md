@@ -13,7 +13,7 @@ Includes 39 mm, 42 mm, 43 mm, 46 mm, 49 mm, 52 mm, 55 mm, 58 mm, 62 mm, 67 mm, 7
 Install:
 - macOS:  bash install_mac.sh
 - Windows:  .\install_windows.ps1
-- Restart Fusion 360 → Create › Thread → "镜头尺寸螺纹规格".
+- Restart Fusion 360 → Create › Thread → "Camera Lens and Filter Threads".
 
 Download (ZIP): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
 Source: https://github.com/HairuoLiu/fusion-lens-threads

@@ -21,9 +21,9 @@
 
 <p align="center">
   <!-- 📷 IMAGE #3 (the money shot): Fusion Thread dialog with the Thread Type
-       dropdown open, showing "镜头尺寸螺纹规格" highlighted. See docs/images/README.md -->
-  <img src="docs/images/thread-type-dropdown.png" alt="The '镜头尺寸螺纹规格' family appears in Fusion 360's Thread Type dropdown" width="720">
-  <br><em>After installing, the <strong>镜头尺寸螺纹规格 (Lens Size Thread Specs)</strong> family shows up right in the Thread command.</em>
+       dropdown open, showing "Camera Lens and Filter Threads" highlighted. See docs/images/README.md -->
+  <img src="docs/images/thread-type-dropdown.png" alt="The 'Camera Lens and Filter Threads' family appears in Fusion 360's Thread Type dropdown" width="720">
+  <br><em>After installing, the <strong>Camera Lens and Filter Threads</strong> family shows up right in the Thread command.</em>
 </p>
 
 ---
@@ -106,7 +106,7 @@ The commonly requested `M39`, `M40`, `M42`, `M43` are all included.
 ## Installation
 
 > **TL;DR:** run one script → **restart Fusion 360** → pick
-> `镜头尺寸螺纹规格` in the Thread dialog. Three steps, done.
+> `Camera Lens and Filter Threads` in the Thread dialog. Three steps, done.
 
 First, get the files — either **clone** or **download the ZIP** from the green
 `Code` button on GitHub and unzip it:
@@ -135,7 +135,7 @@ The script finds your Fusion `ThreadData` folder automatically and writes
 
 **Step 2 — Restart Fusion 360** (fully quit and reopen).
 
-**Step 3 — Verify:** open the Thread command and look for `镜头尺寸螺纹规格`
+**Step 3 — Verify:** open the Thread command and look for `Camera Lens and Filter Threads`
 in the Thread Type dropdown. Done ✅
 
 Handy flags:
@@ -164,7 +164,7 @@ powershell -ExecutionPolicy Bypass -File install_windows.ps1
 **Step 2 — Restart Fusion 360** (fully quit and reopen).
 
 **Step 3 — Verify:** open the Thread command → the Thread Type dropdown now
-lists `镜头尺寸螺纹规格`. Done ✅
+lists `Camera Lens and Filter Threads`. Done ✅
 
 Handy flags:
 
@@ -206,7 +206,7 @@ yourself:
 </p>
 
 **3.** Tick **Modeled** (so the thread is real geometry, not just cosmetic), then
-set **Thread Type → `镜头尺寸螺纹规格`**.
+set **Thread Type → `Camera Lens and Filter Threads`**.
 
 **4.** Choose **Size** and **Designation** — e.g. `M42x1` for an M42 mount, or
 `M42x0.75` for a 42 mm filter thread.
@@ -247,7 +247,7 @@ re-apply custom threads automatically after each update.
 
 | Symptom | Fix |
 |---------|-----|
-| `镜头尺寸螺纹规格` doesn't appear | Did you fully **restart** Fusion 360? Custom threads load at startup. |
+| `Camera Lens and Filter Threads` doesn't appear | Did you fully **restart** Fusion 360? Custom threads load at startup. |
 | It appeared before but vanished | Fusion updated → new version folder. **Re-run the installer.** |
 | Installer says "ThreadData not found" | Use `--output` / `-OutputDir` to point at the folder manually, or do the [manual install](#manual-install-any-os). |
 | Windows: "running scripts is disabled" | Use the exact command with `-ExecutionPolicy Bypass` shown above. |

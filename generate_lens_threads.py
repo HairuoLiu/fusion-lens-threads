@@ -3,8 +3,8 @@
 """
 Generate LensSizeThreads.xml for Autodesk Fusion 360.
 
-Creates a custom thread family named "镜头尺寸螺纹规格" (Lens Size Thread
-Specs) that appears in Fusion 360's Thread command under "Thread Type".
+Creates a custom thread family named "Camera Lens and Filter Threads" that
+appears in Fusion 360's Thread command under "Thread Type".
 
 It covers every common camera-lens / filter thread diameter (24 mm .. 127 mm)
 with BOTH a 0.75 mm pitch and a 1.0 mm pitch, so any lens (e.g. the
@@ -30,7 +30,7 @@ import math
 # ---------------------------------------------------------------------------
 
 # Family name shown in Fusion 360's "Thread Type" dropdown.
-FAMILY_NAME = "镜头尺寸螺纹规格"
+FAMILY_NAME = "Camera Lens and Filter Threads"
 
 UNIT = "mm"
 ANGLE = 60.0

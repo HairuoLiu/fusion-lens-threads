@@ -16,7 +16,7 @@ It's a Fusion 360 thread definition (XML) plus one-line installers for Mac & Win
 How to use:
 1. Download & run the installer for your OS.
 2. Restart Fusion 360.
-3. Create › Thread → choose "镜头尺寸螺纹规格".
+3. Create › Thread → choose "Camera Lens and Filter Threads".
 
 Useful for step-up rings, lens hoods, body caps, filter adapters.
 

@@ -16,7 +16,7 @@ I open-sourced a thread library that fixes this:
 Install:
 - macOS:  bash install_mac.sh
 - Windows:  .\install_windows.ps1
-- Restart Fusion 360 → Create › Thread → "镜头尺寸螺纹规格".
+- Restart Fusion 360 → Create › Thread → "Camera Lens and Filter Threads".
 
 Download (ZIP): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
 MIT licensed. Feedback / PRs welcome — especially if your size or pitch is missing.

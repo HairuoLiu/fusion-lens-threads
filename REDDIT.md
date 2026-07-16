@@ -72,7 +72,7 @@ What it does:
 - One-click installer for macOS (bash) and Windows (PowerShell), no dependencies
 - Auto-detects your Fusion ThreadData folder
 
-After running the installer + restarting Fusion, "镜头尺寸螺纹规格 (Lens Size
+After running the installer + restarting Fusion, "Camera Lens and Filter Threads (Lens Size
 Thread Specs)" shows up right in the Thread Type dropdown.
 
 Free and MIT-licensed. Feedback / more sizes welcome:

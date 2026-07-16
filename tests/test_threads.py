@@ -5,7 +5,7 @@ Validate a generated LensSizeThreads.xml against the project spec.
 
 Checks:
   * well-formed XML, root <ThreadType>
-  * family Name == 镜头尺寸螺纹规格, Unit == mm, Angle == 60
+  * family Name == Camera Lens and Filter Threads, Unit == mm, Angle == 60
   * every diameter in SIZES is present as a <ThreadSize>
   * every size has BOTH pitch 0.75 and 1.0 designations (Mxx x pitch)
   * every designation has both external (6g) and internal (6H) threads

@@ -11,7 +11,7 @@ If you 3D-print accessories for your mirrorless kit (step-up rings, lens hoods, 
 Install:
 - macOS:  bash install_mac.sh
 - Windows:  .\install_windows.ps1
-- Restart Fusion 360 → Create › Thread → "镜头尺寸螺纹规格".
+- Restart Fusion 360 → Create › Thread → "Camera Lens and Filter Threads".
 
 Download (ZIP): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
 Repo + docs: https://github.com/HairuoLiu/fusion-lens-threads

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ThreadType>
-  <Name>镜头尺寸螺纹规格</Name>
-  <CustomName>镜头尺寸螺纹规格</CustomName>
+  <Name>Camera Lens and Filter Threads</Name>
+  <CustomName>Camera Lens and Filter Threads</CustomName>
   <Unit>mm</Unit>
   <Angle>60</Angle>
   <SortOrder>100</SortOrder>

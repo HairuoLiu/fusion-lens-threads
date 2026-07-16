@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 #
-# install_mac.sh  —  Install "镜头尺寸螺纹规格" lens threads into Autodesk Fusion 360 (macOS)
+# install_mac.sh  —  Install "Camera Lens and Filter Threads" into Autodesk Fusion 360 (macOS)
 #
 # What it does:
-#   1. Auto-detects the Fusion 360 ThreadData folder (newest webdeploy version).
+#   1. Auto-detects ALL Fusion 360 ThreadData folders (every webdeploy version
+#      build on this machine).
 #   2. Generates LensSizeThreads.xml (all common lens/filter diameters 24..127 mm,
 #      with both 0.75 mm and 1.0 mm pitch).
-#   3. Copies the file into the detected folder. Restart Fusion 360 afterwards.
+#   3. Copies the file into EVERY detected folder. Restart Fusion 360 afterwards.
 #
 # Usage:
 #   ./install_mac.sh                 # auto-detect & install
@@ -20,7 +21,7 @@ set -euo pipefail
 # ---------------------------------------------------------------------------
 # Configuration (mirrors generate_lens_threads.py)
 # ---------------------------------------------------------------------------
-FAMILY_NAME="镜头尺寸螺纹规格"
+FAMILY_NAME="Camera Lens and Filter Threads"
 UNIT="mm"
 ANGLE="60"
 SORT_ORDER="100"
@@ -115,23 +116,23 @@ build_xml() {
   echo "</ThreadType>"
 }
 
-detect_mac_path() {
+find_all_mac_paths() {
   local base="$HOME/Library/Application Support/Autodesk/Webdeploy/production"
-  [ -d "$base" ] || return 1
-  # newest version directory (by modification time)
-  local vdir
-  vdir=$(find "$base" -maxdepth 1 -mindepth 1 -type d -printf '%T@ %p\n' 2>/dev/null \
-            | sort -n | tail -1 | awk '{print $2}')
-  [ -n "$vdir" ] || return 1
-  local cand=(
-    "$vdir/Autodesk Fusion 360.app/Contents/Libraries/Applications/Fusion/Fusion/Server/Fusion/Configuration/ThreadData"
-    "$vdir/Autodesk Fusion 360.app/Contents/Libraries/Applications/Fusion/Server/fusion/Configuration/ThreadData"
-  )
-  local c
-  for c in "${cand[@]}"; do
-    [ -d "$c" ] && { echo "$c"; return 0; }
+  [ -d "$base" ] || return 0
+  local vdirs
+  vdirs=$(find "$base" -maxdepth 1 -mindepth 1 -type d 2>/dev/null)
+  local results=""
+  for vdir in $vdirs; do
+    local cand=(
+      "$vdir/Autodesk Fusion 360.app/Contents/Libraries/Applications/Fusion/Fusion/Server/Fusion/Configuration/ThreadData"
+      "$vdir/Autodesk Fusion 360.app/Contents/Libraries/Applications/Fusion/Server/fusion/Configuration/ThreadData"
+    )
+    local c
+    for c in "${cand[@]}"; do
+      [ -d "$c" ] && results="${results}${c}"$'\n'
+    done
   done
-  return 1
+  printf '%s' "$results"
 }
 
 # ---------------------------------------------------------------------------
@@ -146,20 +147,26 @@ if [ -n "$OUTPUT_OVERRIDE" ]; then
   exit 0
 fi
 
-if MAC_PATH=$(detect_mac_path); then
-  if [ "$DRY_RUN" = 1 ]; then
-    echo "[dry-run] would install to: $MAC_PATH"
-    exit 0
-  fi
-  build_xml > "$MAC_PATH/LensSizeThreads.xml"
-  echo "Installed LensSizeThreads.xml to:"
-  echo "  $MAC_PATH"
-  echo "Restart Fusion 360, then look for thread type: $FAMILY_NAME"
+MAC_PATHS=$(find_all_mac_paths)
+if [ -z "$MAC_PATHS" ]; then
+  echo "ERROR: Could not auto-detect the Fusion 360 ThreadData folder." >&2
+  echo "Run with --output /path/to/ThreadData to install manually," >&2
+  echo "or check the path at:" >&2
+  echo "  ~/Library/Application Support/Autodesk/Webdeploy/production/<version>/Autodesk Fusion 360.app/Contents/Libraries/Applications/Fusion/Fusion/Server/Fusion/Configuration/ThreadData" >&2
+  exit 1
+fi
+
+if [ "$DRY_RUN" = 1 ]; then
+  echo "$MAC_PATHS" | while IFS= read -r p; do
+    [ -n "$p" ] && echo "[dry-run] would install to: $p"
+  done
   exit 0
 fi
 
-echo "ERROR: Could not auto-detect the Fusion 360 ThreadData folder." >&2
-echo "Run with --output /path/to/ThreadData to install manually," >&2
-echo "or check the path at:" >&2
-echo "  ~/Library/Application Support/Autodesk/Webdeploy/production/<version>/Autodesk Fusion 360.app/Contents/Libraries/Applications/Fusion/Fusion/Server/Fusion/Configuration/ThreadData" >&2
-exit 1
+echo "$MAC_PATHS" | while IFS= read -r p; do
+  [ -z "$p" ] && continue
+  build_xml > "$p/LensSizeThreads.xml"
+  echo "Installed LensSizeThreads.xml to:"
+  echo "  $p"
+done
+echo "Restart Fusion 360, then look for thread type: $FAMILY_NAME"
