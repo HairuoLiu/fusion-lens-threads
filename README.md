@@ -33,6 +33,7 @@
 - [Why this exists](#why-this-exists)
 - [Features](#features)
 - [Supported sizes & pitches](#supported-sizes--pitches)
+- [Which pitch: 0.75 vs 1.0 mm](#which-pitch-075-vs-10-mm)
 - [Requirements](#requirements)
 - [Installation](#installation)
   - [macOS](#macos)
@@ -90,6 +91,39 @@ All diameters (mm), each available in **0.75 mm** and **1.0 mm** pitch:
 
 That's **73 sizes × 2 pitches × (external + internal) = 292 thread definitions**.
 The commonly requested `M39`, `M40`, `M42`, `M43` are all included.
+
+## Which pitch should I use? 0.75 mm vs 1.0 mm
+
+Both pitches exist for a reason: **the same diameter number can be a filter
+thread (0.75 mm) or a lens mount (1.0 mm)** — the pitch is what tells them
+apart.
+
+**Quick rule**
+- **0.75 mm** → the thread on the *front of a lens* (where you screw
+  UV/ND/CPL filters, lens caps, hoods, step-up rings). This is the
+  photographic standard for filter threads up to ~86 mm.
+- **1.0 mm** → (a) **large filter diameters** (95, 105, 112, 120, 127 mm),
+  and (b) **screw lens mounts** like `M42×1` (Pentax/Praktica SLR) and
+  `M39×1` (Leica Thread Mount rangefinder).
+
+| You are modeling… | Use | Examples |
+|---|---|---|
+| A screw-in filter, cap, hood, or filter step-ring (≤ 86 mm) | **0.75 mm** | 49, 52, 67, 77 mm filter threads |
+| A large filter accessory (≥ 95 mm) | **1.0 mm** | 95, 105, 112, 120, 127 mm |
+| An adapter to a vintage screw-mount lens | **1.0 mm** | `M42×1` mount, `M39×1` LTM |
+| Unsure / generic filter part | default to **0.75 mm** | safe choice |
+
+**Concrete size notes (the ones people mix up)**
+- **M39**: `M39×0.75` = a 39 mm filter thread; `M39×1.0` = Leica Thread
+  Mount (rangefinder lens). Same number, different use.
+- **M40 / 40.5**: filter threads → `0.75 mm`.
+- **M42**: `M42×0.75` = 42 mm filter thread; `M42×1.0` = the famous SLR
+  screw mount (use 1.0 for adapters).
+- **M43**: filter thread → `0.75 mm`.
+
+In Fusion 360, just pick the matching designation in the *Designation* dropdown
+— see the designation image in
+[Using it in Fusion 360](#using-it-in-fusion-360) for both pitches side by side.
 
 <p align="center">
   <img src="docs/images/thread-geometry.svg" alt="ISO metric 60-degree thread profile with pitch, major/minor diameter and fit clearance" width="720">
