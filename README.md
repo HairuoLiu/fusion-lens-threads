@@ -162,11 +162,6 @@ chmod +x install_mac.sh
 The script finds your Fusion `ThreadData` folder automatically and writes
 `LensSizeThreads.xml` into it.
 
-<p align="center">
-  <!-- 📷 IMAGE #4: Terminal showing install_mac.sh success output + the path it wrote to -->
-  <img src="docs/images/install-macos.png" alt="Running install_mac.sh in Terminal" width="760">
-</p>
-
 **Step 2 — Restart Fusion 360** (fully quit and reopen).
 
 **Step 3 — Verify:** open the Thread command and look for `Camera Lens and Filter Threads`
@@ -221,11 +216,6 @@ yourself:
    - Pick the **newest** `<version-id>` folder if there are several.
 3. Restart Fusion 360.
 
-<p align="center">
-  <!-- 📷 IMAGE #10 (optional): File Explorer/Finder showing ThreadData with LensSizeThreads.xml inside -->
-  <img src="docs/images/threaddata-folder.png" alt="LensSizeThreads.xml placed inside the ThreadData folder" width="760">
-</p>
-
 ---
 
 ## Using it in Fusion 360
@@ -234,38 +224,23 @@ yourself:
 
 **2. `Create → Thread`.**
 
-<p align="center">
-  <!-- 📷 IMAGE #6: Fusion ribbon Create → Thread highlighted -->
-  <img src="docs/images/fusion-create-thread.png" alt="Create → Thread in the Fusion 360 ribbon" width="640">
-</p>
-
 **3.** Tick **Modeled** (so the thread is real geometry, not just cosmetic), then
 set **Thread Type → `Camera Lens and Filter Threads`**.
 
 **4.** Choose **Size** and **Designation** — e.g. `M42x1` for an M42 mount, or
 `M42x0.75` for a 42 mm filter thread.
 
-<p align="center">
-  <!-- 📷 IMAGE #8: the Designation dropdown open, showing M42x1 / M42x0.75 / M39x1 ... -->
-  <img src="docs/images/designation-list.png" alt="Designation dropdown showing both 1.0 mm and 0.75 mm pitches" width="560">
-</p>
-
 **5.** For an internal thread (a ring the lens screws into), also tick
 **Internal**. Click **OK**.
 
 <p align="center">
-  <!-- 📷 IMAGE #7: full Thread dialog, Modeled checked, family + designation chosen, applied on a body -->
   <img src="docs/images/fusion-thread-dialog.png" alt="Completed Thread dialog applied to a body" width="820">
+  <br><em>Thread dialog with <strong>Camera Lens and Filter Threads</strong> selected, showing a modeled thread on a cylindrical body.</em>
 </p>
 
 > **To make two parts screw together**, give the external part and the internal
 > part the **same size and pitch** (e.g. both `M42x1`). The 0.10 mm clearance is
 > already built in, so they'll thread together without editing.
-
-<p align="center">
-  <!-- 📷 IMAGE #9: photo/render of two printed parts screwed together -->
-  <img src="docs/images/result-part.png" alt="Two printed parts threaded together" width="720">
-</p>
 
 ---
 
