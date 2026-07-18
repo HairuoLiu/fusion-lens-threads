@@ -318,6 +318,75 @@ fusion-lens-threads/
 └── LICENSE                   # MIT
 ```
 
+## Automated Reddit posting (Reddit MCP connector)
+
+Instead of copy-pasting by hand, WorkBuddy can post the launch announcements
+for you through the **Reddit MCP connector**. This repo ships **12 ready-to-post
+drafts** in [`reddit-posts/`](reddit-posts/README.md) — one per target
+subreddit, each written to be unique (the server's safe-mode blocks identical
+cross-subreddit content).
+
+### 1. Get Reddit API credentials
+
+The connector posts **as you**, so it needs a Reddit "script" app:
+
+1. Go to <https://www.reddit.com/prefs/apps>.
+2. Click **create app** → choose type **script** (not *web app* / *installed app*).
+3. Name it anything (e.g. `fusion-lens-bot`); set `redirect uri` = `http://localhost`.
+4. Copy what you get:
+   - **client_id** — the id under the app name ("personal use script").
+   - **client_secret** — the secret next to it.
+   - your Reddit **username** and **password**.
+
+### 2. Wire it into WorkBuddy
+
+Add this server to your WorkBuddy `mcp.json` (usually
+`~/.workbuddy/mcp.json`), filling in the four real values:
+
+```json
+{
+  "mcpServers": {
+    "reddit": {
+      "command": "npx",
+      "args": ["-y", "reddit-mcp-server"],
+      "env": {
+        "REDDIT_CLIENT_ID": "<your client_id>",
+        "REDDIT_CLIENT_SECRET": "<your client_secret>",
+        "REDDIT_USERNAME": "<your username>",
+        "REDDIT_PASSWORD": "<your password>"
+      },
+      "disabled": false
+    }
+  }
+}
+```
+
+> **Gotcha — `MCP error -32000: Connection closed`.**
+> Do **not** leave the values as non-empty placeholders (e.g. `FILL_IN_*`):
+> the server tries to authenticate with them, fails, and **exits**, which shows
+> up as `Connection closed` in WorkBuddy. Use **real values** or **empty strings**
+> (empty = anonymous read-only mode — connection stays up, but posting is blocked
+> until you fill them in).
+
+### 3. Trust & launch
+
+1. Open **Connector management → custom connectors → reddit → Trust**.
+2. Restart WorkBuddy (or toggle the connector off/on) so the tools load.
+3. The agent can now call `mcp__reddit__create_post` / `reply_to_post` for each
+   draft in `reddit-posts/`.
+
+### Notes / safety
+
+- Safe mode is **on by default**: ~2 s between writes and cross-subreddit
+  duplicate detection, so the 12 drafts must stay unique (that's why there are
+  12 files, not one copied 12×).
+- Post **one Tier-1 sub per day**, not all at once, to avoid looking like spam.
+  Engage with comments before the next post.
+- Some subreddits require a **flair** or ban links in the body — check
+  `get_subreddit_rules` / `get_post_flairs` first.
+- See [`REDDIT.md`](REDDIT.md) for the full launch playbook (which subs, how to
+  write, etiquette).
+
 ## Contributing
 
 Issues and PRs are welcome — especially:
