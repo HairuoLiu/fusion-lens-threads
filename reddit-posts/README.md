@@ -49,7 +49,7 @@ https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion
 3. **顶帖第一条评论放下载链接。** 很多板块（尤其 r/photography、r/DIY）会自动移除正文里的裸 URL，链接放"第一条评论"最稳。
 4. **发图！** 建帖时用 Reddit 的"图片"按钮挂上这 3 张截图（视觉证明 = 转化率翻倍）：
    - `thread-type-dropdown.png`（螺纹类型下拉出现本库）
-   - `fusion-thread-dialog.png`（完整螺纹对话框）
+   - `fusion-create-thread.png`（创建螺纹对话框）
    - `install-windows.png`（右键→用 PowerShell 运行）
    或直接贴 GitHub README 链接（里面图已渲染好）。
 5. **发帖后 2 小时内秒回每条评论。** 互动率把帖子顶上 "rising" → 进入更多人的首页 → 浏览量滚雪球。

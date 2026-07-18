@@ -12,7 +12,7 @@
 - 主帖有了几条评论后，用 Reddit 自带 **Crosspost** 转到其他对口板块，比新开帖更稳。
 - 建帖时**挂上这 3 张截图**（视觉证明，转化率高）：
   - `thread-type-dropdown.png`（螺纹类型下拉出现本库）
-  - `fusion-thread-dialog.png`（完整螺纹对话框）
+  - `fusion-create-thread.png`（创建螺纹对话框）
   - `install-windows.png`（右键 → 用 PowerShell 运行）
 - 多数板块把**链接放「第一条评论」**最安全（正文裸链常被自动移除）。
 - 发帖后 **2 小时内秒回评论**，把帖子顶上 rising。

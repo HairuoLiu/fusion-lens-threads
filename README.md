@@ -122,11 +122,15 @@ apart.
 - **M43**: filter thread → `0.75 mm`.
 
 In Fusion 360, just pick the matching designation in the *Designation* dropdown
-— see the designation image in
-[Using it in Fusion 360](#using-it-in-fusion-360) for both pitches side by side.
+— the screenshot below shows both pitches listed side by side.
 
 <p align="center">
   <img src="docs/images/thread-geometry.svg" alt="ISO metric 60-degree thread profile with pitch, major/minor diameter and fit clearance" width="720">
+</p>
+
+<p align="center">
+  <img src="docs/images/designation-list.png" alt="Fusion 360 Designation dropdown showing M46x0.75 and M46x1.0 side by side" width="560">
+  <br><em>The <strong>Designation</strong> dropdown lists both pitches for each size — e.g. <code>M46x0.75</code> (filter) and <code>M46x1.0</code> (mount).</em>
 </p>
 
 ## Requirements
@@ -234,8 +238,8 @@ set **Thread Type → `Camera Lens and Filter Threads`**.
 **Internal**. Click **OK**.
 
 <p align="center">
-  <img src="docs/images/fusion-thread-dialog.png" alt="Completed Thread dialog applied to a body" width="820">
-  <br><em>Thread dialog with <strong>Camera Lens and Filter Threads</strong> selected, showing a modeled thread on a cylindrical body.</em>
+  <img src="docs/images/fusion-create-thread.png" alt="Fusion 360 Create Thread dialog with Camera Lens and Filter Threads selected" width="820">
+  <br><em>The <strong>Thread</strong> dialog with <strong>Camera Lens and Filter Threads</strong> selected — pick Size and Designation, then OK.</em>
 </p>
 
 > **To make two parts screw together**, give the external part and the internal
