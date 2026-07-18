@@ -1,25 +1,23 @@
 SUBREDDIT: r/opensource
-TYPE: self (text) post
-LABEL: Secondary — open-source community
+TYPE: self (text) post + attach screenshots
+LABEL: 第二梯队 — 开发者/FOSS 曝光
+WHEN: Day 4
 
 TITLE:
-[OC] I open-sourced a Fusion 360 thread library for camera lens/filter sizes (MIT, zero deps, Mac + Windows)
+[OC] I open-sourced a Fusion 360 thread library for camera lens/filter sizes (73 sizes, MIT, zero deps)
 
 SELF TEXT:
-Sharing a small, focused open-source project: a Fusion 360 thread definition that adds 73 camera lens/filter thread sizes (24–127 mm) with 0.75 mm and 1.0 mm pitches, external + internal, to the built-in Thread tool.
+Small but genuinely useful: Fusion 360 ships standard ISO/UTS threads but not photographic lens/filter threads (M42 mount, M39, the dozens of filter diameters). I built a thread-definition XML + one-line Mac/Windows installers that drop 73 sizes (24–127 mm) into the built-in Thread feature, each in 0.75 mm and 1.0 mm pitch with proper 6g/6H clearance.
 
-Why: Fusion 360 ships without the common photo sizes (39/40/42/43 mm filters, M42×1 mount), so people model fake threads that don't mesh with real glass.
+- Pure XML + bash/PowerShell, no Python needed to install.
+- Three generators (Python/bash/PowerShell) verified byte-identical by a test harness.
+- MIT licensed.
 
-Highlights:
-- Zero runtime dependencies — pure bash (macOS) and PowerShell (Windows) installers that auto-detect Fusion's ThreadData folder.
-- Fully tested: a Python generator + test suite assert all three code paths (Python / bash / PowerShell) emit byte-identical, schema-valid XML.
-- Bilingual README (EN + 中文), MIT licensed (SPDX: MIT).
+Useful if you 3D-print or machine lens adapters, step-up rings, caps.
 
-Repo: https://github.com/HairuoLiu/fusion-lens-threads
-Download (ZIP): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
-
-Would love feedback on coverage (missing sizes/pitches) or the installer logic.
+Download + source (first comment).
 
 FIRST COMMENT:
-ZIP: https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
-Repo: https://github.com/HairuoLiu/fusion-lens-threads
+👉 ZIP (v1.0.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 Source + bilingual README: https://github.com/HairuoLiu/fusion-lens-threads
+PRs welcome (extra sizes/pitches, Linux path detection).
