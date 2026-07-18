@@ -242,6 +242,11 @@ set **Thread Type → `Camera Lens and Filter Threads`**.
   <br><em>The <strong>Thread</strong> dialog with <strong>Camera Lens and Filter Threads</strong> selected — pick Size and Designation, then OK.</em>
 </p>
 
+<p align="center">
+  <img src="docs/images/result-part.png" alt="Modeled thread result on a cylindrical part in Fusion 360" width="820">
+  <br><em>The result: a fully modeled camera-lens thread on your part, ready for 3D printing or machining.</em>
+</p>
+
 > **To make two parts screw together**, give the external part and the internal
 > part the **same size and pitch** (e.g. both `M42x1`). The 0.10 mm clearance is
 > already built in, so they'll thread together without editing.
