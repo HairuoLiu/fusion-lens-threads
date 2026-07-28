@@ -60,37 +60,78 @@ Camera Lens and Filter Threads
 Add real camera lens & filter thread sizes (24–127 mm, 0.75/1.0 mm) to Fusion 360's Thread Type dropdown.
 ```
 
-**Full description (HTML, ≤4000 chars) — paste as-is:**
+**App Description** *(HTML, ≤4000 chars — the long description box on the form.
+Paste as-is):*
 ```html
 <h1>Camera Lens and Filter Threads for Fusion 360</h1>
 <p>Free, open-source add-in that adds standard camera lens and filter thread
-sizes to the <strong>Thread Type</strong> dropdown, so you can model step-up
-rings, filter adapters, lens hoods, and custom caps with real, dimensionally
-correct threads.</p>
+sizes to the <strong>Thread Type</strong> dropdown in Fusion 360 — so you can
+model step-up rings, filter adapters, lens hoods, lens caps, and custom threaded
+accessories with real, dimensionally correct threads.</p>
 
-<h2>What it installs</h2>
+<h2>What you get</h2>
 <ul>
-  <li><strong>73 sizes</strong> from 24 mm to 127 mm — 25, 30, 37, 39, 40.5, 43,
-      46, 49, 52, 55, 58, 62, 67, 72, 77, 82, 86, 95, 105, 112, 127 mm and more.</li>
-  <li><strong>Two pitches:</strong> 0.75 mm (most filter sizes) and 1.0 mm
-      (large filters + M39/M42 lens mounts).</li>
+  <li><strong>73 sizes</strong> from 24 mm to 127 mm — including 25, 30, 37, 39,
+      40.5, 43, 46, 49, 52, 55, 58, 62, 67, 72, 77, 82, 86, 95, 105, 112, 127 mm.</li>
+  <li><strong>Two pitches:</strong> 0.75 mm (used by almost all filter sizes) and
+      1.0 mm (filters ≥95 mm, plus M39×1 and M42×1 lens mounts).</li>
   <li>Both <strong>male (external)</strong> and <strong>female (internal)</strong>
       threads — 292 thread definitions in total.</li>
 </ul>
 
-<h2>How to use</h2>
-<ol>
-  <li>Install the add-in (from the App Store, or via Scripts &amp; Add-ins).</li>
-  <li><strong>Run it once</strong> — it copies the thread definitions into
-      Fusion's configuration folder.</li>
-  <li><strong>Restart Fusion 360.</strong></li>
-  <li>Create a thread (Modify &gt; Thread), open the <em>Thread Type</em> list,
-      and pick <strong>Camera Lens and Filter Threads</strong>.</li>
-</ol>
+<h2>Why it helps</h2>
+<p>Stock Fusion 360 only knows standard engineering threads (M, UNC/UNF, G, NPT…).
+Camera and filter threads are a different world. This library closes that gap so
+your 3D-printed adapters actually screw onto real lenses and filters.</p>
 
 <h2>Open source</h2>
-<p>MIT licensed. Source and docs:
+<p>MIT licensed. Source, generator, and docs:
 <a href="https://github.com/HairuoLiu/fusion-lens-threads">github.com/HairuoLiu/fusion-lens-threads</a></p>
+```
+
+**General Usage Instructions** *(plain-text box on the form):*
+```
+1. Launch the add-in once: in Fusion 360 go to Tools ▸ Scripts and Add-Ins ▸
+   Add-Ins tab, select "Camera Lens and Filter Threads", and click Run. (Installing
+   from the Autodesk App Store also adds it to this list.)
+2. The add-in copies the thread library into Fusion's configuration folder. You
+   only need to run it once.
+3. Restart Fusion 360.
+4. Open or create a model. Go to Modify ▸ Thread.
+5. In the Thread dialog, click the Thread Type field and choose
+   "Camera Lens and Filter Threads".
+6. Pick the Size (e.g. 46 mm) and the Designation / pitch (M46×0.75 or M46×1.0),
+   set the length, and click OK.
+7. Tip: use 0.75 mm for filters up to 86 mm; use 1.0 mm for filters 95 mm and
+   larger, and for M39/M42 lens mounts.
+```
+
+**Installation/Uninstallation** *(plain-text box on the form):*
+```
+INSTALLATION
+• If installed from the Autodesk App Store: the add-in is added to Fusion 360
+  automatically. Open Fusion 360, go to Tools ▸ Scripts and Add-Ins ▸ Add-Ins,
+  select "Camera Lens and Filter Threads", and click Run once. The thread XML is
+  then copied into Fusion's ThreadData folder.
+• Restart Fusion 360 to activate the thread type.
+
+UNINSTALLATION
+• In Fusion 360: Tools ▸ Scripts and Add-Ins ▸ Add-Ins tab, select the add-in,
+  click Unload, then close Fusion.
+• To fully remove, delete the add-in folder "LensSizeThreads.bundle" from your
+  Fusion add-ins directory, and (optionally) delete "LensSizeThreads.xml" from
+  every Fusion ThreadData folder:
+  Windows: %LOCALAPPDATA%\Autodesk\webdeploy\Production\<version>\Fusion\Server\Fusion\Configuration\ThreadData
+  macOS: ~/Library/Application Support/Autodesk/Webdeploy/production/<version>/Autodesk Fusion 360.app/Contents/Resources/.../Configuration/ThreadData
+```
+
+**Support Information** *(plain-text box on the form):*
+```
+Free and open-source. Support is provided via the project's GitHub repository:
+• Issues / bug reports: https://github.com/HairuoLiu/fusion-lens-threads/issues
+• Source, documentation, and updates: https://github.com/HairuoLiu/fusion-lens-threads
+Please open a GitHub issue for questions, missing sizes, or problems. No paid
+support is offered.
 ```
 
 **EULA:** leave the Autodesk standard EULA selected (free product). The MIT
