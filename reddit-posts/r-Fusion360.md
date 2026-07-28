@@ -25,6 +25,6 @@ Both installers auto-detect Fusion's ThreadData folder (newest version) and drop
 (Download + bilingual README in the first comment.)
 
 FIRST COMMENT (put the links here — some subs filter body URLs):
-👉 Download (ZIP, v1.0.0, one click): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 Download (ZIP, v1.1.0, one click): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Repo + docs (with the screenshots): https://github.com/HairuoLiu/fusion-lens-threads
 License: MIT. Star it if it saves you time.

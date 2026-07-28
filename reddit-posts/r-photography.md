@@ -14,5 +14,5 @@ Happy to answer questions about which pitch to use (spoiler: ≤86mm filters = 0
 (The download + source are in the first comment, since this sub filters links in the body.)
 
 FIRST COMMENT (链接只放这):
-👉 Download (ZIP, v1.0.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 Download (ZIP, v1.1.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Source + README: https://github.com/HairuoLiu/fusion-lens-threads

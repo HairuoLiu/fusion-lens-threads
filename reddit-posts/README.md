@@ -3,8 +3,8 @@
 目标：让**最多人看到**并**真的去用**这个 Fusion 360 镜头螺纹库。
 每个 `.md` 文件是一篇**可直接复制**的 Reddit 帖子：把 `TITLE` 和 `SELF TEXT` 贴到新帖，`FIRST COMMENT` 作为第一条回复（链接受限的板块需要）。
 
-下载直链（v1.0.0 ZIP，一键下载）：
-https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+下载直链（v1.1.0 ZIP，一键下载）：
+https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 仓库（双语 README + 截图）：https://github.com/HairuoLiu/fusion-lens-threads
 
 ---

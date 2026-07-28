@@ -24,5 +24,5 @@ How to use (≈30s):
 (Links in the first comment.)
 
 FIRST COMMENT:
-👉 Download (ZIP, v1.0.0, one click): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 Download (ZIP, v1.1.0, one click): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Repo + README with the screenshots: https://github.com/HairuoLiu/fusion-lens-threads

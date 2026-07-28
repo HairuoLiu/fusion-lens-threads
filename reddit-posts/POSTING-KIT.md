@@ -3,8 +3,8 @@
 > 用途：Reddit 已关闭自助 API 建 app，且网关拦截自动化浏览器，所以**自动化发帖走不通**。
 > 这份包是给你**手动发帖**用的——每条都是现成的标题 + 正文 + 第一条评论，复制粘贴即可。
 >
-> 下载直链（v1.0.0，含修复后的安装器 + 三张截图）：
-> https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+> 下载直链（v1.1.0，含修复后的安装器 + 三张截图）：
+> https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 > 仓库：https://github.com/HairuoLiu/fusion-lens-threads
 
 ## 发帖节奏（避免被当 spam）
@@ -47,7 +47,7 @@ Both installers auto-detect Fusion's ThreadData folder (newest version) and drop
 ```
 **第一条评论：**
 ```
-👉 Download (ZIP, v1.0.0, one click): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 Download (ZIP, v1.1.0, one click): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Repo + docs (with the screenshots): https://github.com/HairuoLiu/fusion-lens-threads
 License: MIT. Star it if it saves you time.
 ```
@@ -79,7 +79,7 @@ How to use (≈30s):
 ```
 **第一条评论：**
 ```
-👉 Download (ZIP, v1.0.0, one click): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 Download (ZIP, v1.1.0, one click): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Repo + README with the screenshots: https://github.com/HairuoLiu/fusion-lens-threads
 ```
 
@@ -107,7 +107,7 @@ Install: run the script for your OS → restart Fusion → Create › Thread →
 ```
 **第一条评论：**
 ```
-👉 ZIP (v1.0.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 ZIP (v1.1.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Repo: https://github.com/HairuoLiu/fusion-lens-threads
 ```
 
@@ -136,7 +136,7 @@ MIT licensed. If you model a specific adapter, I'd love to see it. (Links in fir
 ```
 **第一条评论：**
 ```
-👉 ZIP (v1.0.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 ZIP (v1.1.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Repo: https://github.com/HairuoLiu/fusion-lens-threads
 ```
 
@@ -165,7 +165,7 @@ MIT. If you model a specific adapter, I'd love to see it. (Links in first commen
 ```
 **第一条评论：**
 ```
-👉 ZIP (v1.0.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 ZIP (v1.1.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Repo: https://github.com/HairuoLiu/fusion-lens-threads
 ```
 
@@ -194,7 +194,7 @@ MIT. Show me what you adapt. (Links in first comment.)
 ```
 **第一条评论：**
 ```
-👉 ZIP (v1.0.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 ZIP (v1.1.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Repo: https://github.com/HairuoLiu/fusion-lens-threads
 ```
 
@@ -220,7 +220,7 @@ Install: run the Mac/Windows script → restart Fusion → Create › Thread →
 ```
 **第一条评论：**
 ```
-👉 ZIP (v1.0.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 ZIP (v1.1.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Repo: https://github.com/HairuoLiu/fusion-lens-threads
 ```
 
@@ -241,7 +241,7 @@ How to use: run installer → restart Fusion → Create › Thread → "Camera L
 ```
 **第一条评论：**
 ```
-👉 ZIP (v1.0.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 ZIP (v1.1.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Repo: https://github.com/HairuoLiu/fusion-lens-threads
 ```
 
@@ -266,7 +266,7 @@ Download + source (first comment).
 ```
 **第一条评论：**
 ```
-👉 ZIP (v1.0.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 ZIP (v1.1.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Source + bilingual README: https://github.com/HairuoLiu/fusion-lens-threads
 PRs welcome (extra sizes/pitches, Linux path detection).
 ```
@@ -288,7 +288,7 @@ Happy to answer questions about which pitch to use (spoiler: ≤86mm filters = 0
 ```
 **第一条评论：**
 ```
-👉 Download (ZIP, v1.0.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 Download (ZIP, v1.1.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Source + README: https://github.com/HairuoLiu/fusion-lens-threads
 ```
 
@@ -307,7 +307,7 @@ If you DIY camera accessories (lens caps, step-up rings, filter adapters) and mo
 ```
 **第一条评论：**
 ```
-👉 ZIP (v1.0.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 ZIP (v1.1.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Repo: https://github.com/HairuoLiu/fusion-lens-threads
 ```
 

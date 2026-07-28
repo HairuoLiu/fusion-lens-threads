@@ -7,8 +7,8 @@
 
 ## 一、平台总览与核心资源
 
-**下载直链（v1.0.0 ZIP）：**
-https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+**下载直链（v1.1.0 ZIP）：**
+https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 
 **GitHub 仓库（双语 README + 7 张截图）：**
 https://github.com/HairuoLiu/fusion-lens-threads
@@ -249,7 +249,7 @@ If you 3D-print lens adapters, step-up rings, or filter holders, this will save 
 
 **评论里放：**
 ```
-👉 ZIP download: https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 ZIP download: https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 GitHub repo (with full README + screenshots): https://github.com/HairuoLiu/fusion-lens-threads
 ```
 

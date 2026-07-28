@@ -18,6 +18,6 @@ Useful if you 3D-print or machine lens adapters, step-up rings, caps.
 Download + source (first comment).
 
 FIRST COMMENT:
-👉 ZIP (v1.0.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 ZIP (v1.1.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Source + bilingual README: https://github.com/HairuoLiu/fusion-lens-threads
 PRs welcome (extra sizes/pitches, Linux path detection).

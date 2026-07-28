@@ -19,5 +19,5 @@ Install: run the Mac/Windows script → restart Fusion → Create › Thread →
 (Links in first comment.)
 
 FIRST COMMENT:
-👉 ZIP (v1.0.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.0.0/fusion-lens-threads-v1.0.0.zip
+👉 ZIP (v1.1.0): https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 👉 Repo: https://github.com/HairuoLiu/fusion-lens-threads
