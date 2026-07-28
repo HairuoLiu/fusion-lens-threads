@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AddinManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AutodeskProduct>Fusion360</AutodeskProduct>
+  <Type>Python</Type>
+  <Description>Adds camera lens and filter thread sizes to Fusion 360's Thread Type dropdown. Run once to install; restart Fusion to use.</Description>
+  <Author>HairuoLiu</Author>
+  <Version>1.1.0</Version>
+  <Id>CameraLensAndFilterThreads</Id>
+  <Name>Camera Lens and Filter Threads</Name>
+</AddinManifest>

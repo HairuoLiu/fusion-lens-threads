@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPackage SchemaVersion="1.0" AppVersion="1.1.0"
+    Author="HairuoLiu"
+    Name="Camera Lens and Filter Threads"
+    Description="Adds camera lens and filter thread sizes (24-127 mm, 0.75/1.0 mm pitch) to Fusion 360's Thread Type dropdown."
+    Icon="./Contents/icon.png"
+    Helpfile="./Contents/help.html"
+    ProductCode="{4C9CEE75-415B-4B3C-82B2-B91EFB0234DF}"
+    UpgradeCode="{46B1A8BF-D84F-46BD-AD21-98AAD311C861}">
+  <CompanyDetails
+    Name="HairuoLiu"
+    Email=""
+    Url="https://github.com/HairuoLiu/fusion-lens-threads" />
+  <RuntimeRequirements OS="Win64|Mac" Platform="Fusion" />
+  <Components>
+    <ComponentEntry
+      AppName="Camera Lens and Filter Threads"
+      ModuleName="./Contents/lens_thread_installer.py"
+      AppDescription="Installs lens/filter thread definitions into Fusion 360." />
+  </Components>
+</ApplicationPackage>
