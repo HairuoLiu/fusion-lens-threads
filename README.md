@@ -11,8 +11,19 @@
   <img alt="Dependencies" src="https://img.shields.io/badge/runtime%20deps-none-brightgreen">
   <img alt="Fusion 360" src="https://img.shields.io/badge/Autodesk-Fusion%20360-orange">
   <img alt="Threads" src="https://img.shields.io/badge/threads-73%20sizes%20%C3%97%202%20pitches-9cf">
+  <a href="https://apps.autodesk.com/FUSION/en/Detail/Index?id=4331085586591467927"><img alt="Autodesk App Store" src="https://img.shields.io/badge/Autodesk-App%20Store-orange"></a>
   <a href="#contributing"><img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-success"></a>
 </p>
+
+<p align="center">
+  <a href="https://apps.autodesk.com/FUSION/en/Detail/Index?id=4331085586591467927">
+    <img src="https://img.shields.io/badge/Install%20from-Autodesk%20App%20Store-blue?logo=autodesk&logoColor=white" alt="Install from the Autodesk App Store"></a>
+</p>
+
+> 🟠 **Now listed on the Autodesk App Store!** The easiest install: in Fusion 360
+> open *Scripts and Add-Ins* → *App Store*, search **Camera Lens and Filter
+> Threads**, and click **Install**. *(Store page is in review; the link goes live
+> for everyone once Autodesk approves it.)*
 
 > A one-click custom thread library that adds **every common camera-lens and
 > filter thread** (M39, M40, M42, M43 … up to 127 mm) to Autodesk Fusion 360 —
@@ -36,6 +47,7 @@
 - [Which pitch: 0.75 vs 1.0 mm](#which-pitch-075-vs-10-mm)
 - [Requirements](#requirements)
 - [Installation](#installation)
+  - [From the Autodesk App Store (easiest)](#from-the-autodesk-app-store-easiest)
   - [macOS](#macos)
   - [Windows](#windows)
   - [Manual install (any OS)](#manual-install-any-os)
@@ -145,6 +157,21 @@ In Fusion 360, just pick the matching designation in the *Designation* dropdown
 
 > **TL;DR:** run one script → **restart Fusion 360** → pick
 > `Camera Lens and Filter Threads` in the Thread dialog. Three steps, done.
+
+### From the Autodesk App Store (easiest)
+
+1. In Fusion 360, open **Scripts and Add-Ins** (under the *Tools* menu), then click
+   the **App Store** tab (or the store icon).
+2. Search for **Camera Lens and Filter Threads** and click **Install**.
+3. The add-in copies the thread library into Fusion's configuration and prompts you
+   to **restart Fusion 360**. After restart, the family appears in the Thread Type
+   dropdown.
+
+You can also open the store page directly:
+**https://apps.autodesk.com/FUSION/en/Detail/Index?id=4331085586591467927**
+
+> Prefer the manual route? The sections below show how to install from this repo
+> with the included scripts.
 
 First, get the files — either **clone** or **download the ZIP** from the green
 `Code` button on GitHub and unzip it:

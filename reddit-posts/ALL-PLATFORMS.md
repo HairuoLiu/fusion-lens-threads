@@ -7,10 +7,17 @@
 
 ## 一、平台总览与核心资源
 
-**下载直链（v1.1.0 ZIP）：**
+> 🟠 **现已上架 Autodesk App Store（Fusion 360 专区）！** 这是用户最省事的安装方式，
+> 也是最大流量入口。所有平台的文案**优先引导到商店**，GitHub 作为备用/源码入口。
+
+**Autodesk App Store 页面（首选安装入口）：**
+https://apps.autodesk.com/FUSION/en/Detail/Index?id=4331085586591467927
+*(页面审核中，通过后对所有人开放；预览期只有你能看到)*
+
+**下载直链（v1.1.0 ZIP，备用）：**
 https://github.com/HairuoLiu/fusion-lens-threads/releases/download/v1.1.0/fusion-lens-threads-v1.1.0.zip
 
-**GitHub 仓库（双语 README + 7 张截图）：**
+**GitHub 仓库（双语 README + 7 张截图 + 源码）：**
 https://github.com/HairuoLiu/fusion-lens-threads
 
 **可用配图（7 张）：**
@@ -42,7 +49,8 @@ https://github.com/HairuoLiu/fusion-lens-threads
 I got tired of hand-modeling lens & filter threads in Fusion 360.
 So I built an open-source library that adds all 73 sizes (M24–M127) with 0.75 & 1.0mm pitch.
 
-One script to install. MIT. Free.
+Now also on the Autodesk App Store — one-click install from inside Fusion 360.
+Otherwise: one script to install. MIT. Free.
 
 🔗 https://github.com/HairuoLiu/fusion-lens-threads
 ```
@@ -338,34 +346,39 @@ The project includes a Python generator for customizing sizes/pitches, a pre-bui
 ## 九、LinkedIn
 
 ### 形式
-① 一篇图文帖 → ② 评论区补链接
+① 一篇图文帖（**正文以 App Store 为主入口**）→ ② 评论区补 GitHub 源码链接
 
 ### 帖子文案
 
 ```
-📷 I open-sourced a Fusion 360 thread library for camera lenses and filters.
+📷 My Fusion 360 thread library for camera lenses & filters is now on the Autodesk App Store.
 
 If you design or 3D-print lens adapters, step-up rings, or camera accessories, you've probably noticed that Fusion 360's built-in threads don't include any photographic sizes — M42 mount, M39, 49mm filter, 77mm filter, etc.
 
-So I built a custom thread family that adds all 73 common sizes (24–127mm) with both 0.75mm (filter) and 1.0mm (mount) pitch.
+So I built a custom thread family that adds all 73 common sizes (24–127mm) with both 0.75mm (filter) and 1.0mm (mount) pitch — external + internal, with real fit clearance so printed parts actually screw together.
 
-The installers auto-detect your Fusion folder — one command, restart, done. Mac & Windows supported.
+Install is now one click from inside Fusion 360:
+→ Open Scripts and Add-Ins → App Store → search "Camera Lens and Filter Threads" → Install.
 
 Key stats:
 🔩 73 diameters × 2 pitches × 2 genders = 292 thread definitions
 📐 ISO 60° profile with 0.10mm fit clearance
-🪶 Zero runtime dependencies (pure bash/PowerShell)
+🪶 Zero runtime dependencies (pure bash/PowerShell installers)
 🧪 Cross-verified generators (Python/bash/PowerShell output identical)
-📜 MIT licensed
+📜 MIT licensed — free for anyone to use, modify, and share
 
-Free for anyone to use. PRs and issues welcome.
-
-🔗 https://github.com/HairuoLiu/fusion-lens-threads
+Source & docs on GitHub (link in comments). PRs and issues welcome.
 
 #Fusion360 #3DPrinting #OpenSource #CAD #Photography #MechanicalDesign #Engineering
 ```
 
 **配图：** `banner.svg`（封面）+ `thread-type-dropdown.png`
+
+**第一条评论（放源码链接，避免正文裸链）：**
+```
+Source code, generators, and full docs: https://github.com/HairuoLiu/fusion-lens-threads
+Autodesk App Store page: https://apps.autodesk.com/FUSION/en/Detail/Index?id=4331085586591467927
+```
 
 ---
 

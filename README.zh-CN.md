@@ -11,7 +11,17 @@
   <img alt="Dependencies" src="https://img.shields.io/badge/runtime%20deps-none-brightgreen">
   <img alt="Fusion 360" src="https://img.shields.io/badge/Autodesk-Fusion%20360-orange">
   <img alt="Threads" src="https://img.shields.io/badge/threads-73%20sizes%20%C3%97%202%20pitches-9cf">
+  <a href="https://apps.autodesk.com/FUSION/en/Detail/Index?id=4331085586591467927"><img alt="Autodesk App Store" src="https://img.shields.io/badge/Autodesk-App%20Store-orange"></a>
 </p>
+
+<p align="center">
+  <a href="https://apps.autodesk.com/FUSION/en/Detail/Index?id=4331085586591467927">
+    <img src="https://img.shields.io/badge/从-Autodesk%20App%20Store%20安装-blue?logo=autodesk&logoColor=white" alt="从 Autodesk App Store 安装"></a>
+</p>
+
+> 🟠 **已上架 Autodesk App Store！** 最省事的装法：在 Fusion 360 里打开「脚本与附加模块」
+> →「应用商店」，搜索 **Camera Lens and Filter Threads**，点「安装」即可。
+> （商店页面正在审核中，待 Autodesk 通过后链接对所有人开放。）
 
 > 一键为 Autodesk Fusion 360 添加**所有常见镜头 / 滤镜螺纹**（M39、M40、M42、M43…
 > 直到 127 mm），每个尺寸同时提供 **0.75 mm 与 1.0 mm 两种螺距**，并预留配合间隙，
@@ -34,6 +44,7 @@
 - [该用 0.75 还是 1.0？](#该用-075-还是-10)
 - [环境要求](#环境要求)
 - [安装](#安装)
+  - [从 Autodesk App Store 安装（最省事）](#从-autodesk-app-store-安装最省事)
   - [macOS](#macos)
   - [Windows](#windows)
   - [手动安装（任意系统）](#手动安装任意系统)
@@ -130,6 +141,17 @@ Fusion 360 自带标准的 ISO / UTS 螺纹表，但**没有摄影镜头 / 滤�
 
 > **一句话：** 跑一次脚本 → **重启 Fusion 360** → 在螺纹对话框里选
 > `Camera Lens and Filter Threads`。三步搞定。
+
+### 从 Autodesk App Store 安装（最省事）
+
+1. 在 Fusion 360 里打开「脚本与附加模块」（*工具* 菜单下），点 **「应用商店」** 标签（或商店图标）。
+2. 搜索 **Camera Lens and Filter Threads**，点击 **「安装」**。
+3. 插件会把螺纹库写入 Fusion 配置，并提示你 **重启 Fusion 360**。重启后，该螺纹族就会出现在「螺纹类型」下拉框里。
+
+也可以直接打开商店页面：
+**https://apps.autodesk.com/FUSION/en/Detail/Index?id=4331085586591467927**
+
+> 想走手动路线？下面几节讲如何用它自带的脚本从本仓库安装。
 
 先获取文件——可以 **git clone**，也可以点 GitHub 绿色 `Code` 按钮 **下载 ZIP** 解压：
 
