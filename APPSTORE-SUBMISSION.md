@@ -1,23 +1,23 @@
 # Autodesk App Store — Submission Pack
 
-This folder is ready to submit to the **Autodesk App Store** (apps.autodesk.com →
+This folder is ready to submit to the **Autodesk App Store** (apps.autodesk.com →  
 Fusion 360). Everything the Publisher Corner web form needs is prepared below.
 
-> ⚠️ I (the agent) **cannot click "Submit" for you** — the Autodesk Publisher
-> Corner requires *your* Autodesk account login (SSO) and accepting the Publisher
-> Agreement. I have prepared every file and every text field. You do the final
+> ⚠️ I (the agent) **cannot click "Submit" for you** — the Autodesk Publisher  
+> Corner requires *your* Autodesk account login (SSO) and accepting the Publisher  
+> Agreement. I have prepared every file and every text field. You do the final  
 > upload + login.
 
 ---
 
 ## 1. What to upload
 
-| Item | File | Status |
-|------|------|--------|
-| **App package (ZIP)** | `LensSizeThreads-AppStore-v1.1.0.zip` | ✅ built |
-| Icon 120×120 PNG | `appstore-icon-120x120.png` | ✅ built |
-| Company logo 120×120 PNG | *reuse the icon* | ✅ (same file) |
-| Screenshots (≤10, PNG/JPG, up to 2000×2000) | `docs/images/*.png` (5 usable) | ✅ present |
+| Item                                        | File                                  | Status        |
+| ------------------------------------------- | ------------------------------------- | ------------- |
+| **App package (ZIP)**                       | `LensSizeThreads-AppStore-v1.1.0.zip` | ✅ built       |
+| Icon 120×120 PNG                            | `appstore-icon-120x120.png`           | ✅ built       |
+| Company logo 120×120 PNG                    | *reuse the icon*                      | ✅ (same file) |
+| Screenshots (≤10, PNG/JPG, up to 2000×2000) | `docs/images/*.png` (5 usable)        | ✅ present     |
 
 The package structure inside the ZIP:
 
@@ -35,33 +35,39 @@ LensSizeThreads.bundle/
     └── generate_lens_threads.py    # source generator
 ```
 
-**Why a bundle/add-in?** The Autodesk autoloader only copies the bundle into
-`ApplicationPlugins`; it does **not** place files into Fusion's `ThreadData`
-folder. So we wrap the thread XML as a tiny Fusion Python add-in whose `run()`
-copies the XML into every detected ThreadData folder — satisfying the
+**Why a bundle/add-in?** The Autodesk autoloader only copies the bundle into  
+`ApplicationPlugins`; it does **not** place files into Fusion's `ThreadData`  
+folder. So we wrap the thread XML as a tiny Fusion Python add-in whose `run()`  
+copies the XML into every detected ThreadData folder — satisfying the  
 "ready to run, no manual copy" rule that pure config+script packages fail.
 
 ---
 
 ## 2. Web-form fields (copy-paste)
 
-**Product type:** Desktop based app → **Add-in/Extension**
-**Supported OS:** Windows **and** Mac (submit/clone both)
-**Price:** **Free**
+**Product type:** Desktop based app → **Add-in/Extension**  
+**Autodesk Product Compatibility:** **Fusion 360**  *(the only compatible product — the
+bundle's manifest declares `<AutodeskProduct>Fusion360</AutodeskProduct>` and uses the
+`adsk.fusion` API, so do NOT select AutoCAD / Revit / Inventor / etc.)*  
+**Supported OS:** Windows **and** Mac (submit/clone both)  
+**Price:** **Free**  
 **Version:** `1.1.0`  *(must increment on every future submission)*
 
 **Title (≤100 chars):**
+
 ```
 Camera Lens and Filter Threads
 ```
 
 **Short description (≤100 chars):**
+
 ```
 Add real camera lens & filter thread sizes (24–127 mm, 0.75/1.0 mm) to Fusion 360's Thread Type dropdown.
 ```
 
-**App Description** *(HTML, ≤4000 chars — the long description box on the form.
+**App Description** *(HTML, ≤4000 chars — the long description box on the form.  
 Paste as-is):*
+
 ```html
 <h1>Camera Lens and Filter Threads for Fusion 360</h1>
 <p>Free, open-source add-in that adds standard camera lens and filter thread
@@ -90,52 +96,22 @@ your 3D-printed adapters actually screw onto real lenses and filters.</p>
 ```
 
 **General Usage Instructions** *(plain-text box on the form):*
+
 ```
-1. Launch the add-in once: in Fusion 360 go to Tools ▸ Scripts and Add-Ins ▸
-   Add-Ins tab, select "Camera Lens and Filter Threads", and click Run. (Installing
-   from the Autodesk App Store also adds it to this list.)
-2. The add-in copies the thread library into Fusion's configuration folder. You
-   only need to run it once.
-3. Restart Fusion 360.
-4. Open or create a model. Go to Modify ▸ Thread.
-5. In the Thread dialog, click the Thread Type field and choose
-   "Camera Lens and Filter Threads".
-6. Pick the Size (e.g. 46 mm) and the Designation / pitch (M46×0.75 or M46×1.0),
-   set the length, and click OK.
-7. Tip: use 0.75 mm for filters up to 86 mm; use 1.0 mm for filters 95 mm and
-   larger, and for M39/M42 lens mounts.
 ```
 
 **Installation/Uninstallation** *(plain-text box on the form):*
-```
-INSTALLATION
-• If installed from the Autodesk App Store: the add-in is added to Fusion 360
-  automatically. Open Fusion 360, go to Tools ▸ Scripts and Add-Ins ▸ Add-Ins,
-  select "Camera Lens and Filter Threads", and click Run once. The thread XML is
-  then copied into Fusion's ThreadData folder.
-• Restart Fusion 360 to activate the thread type.
 
-UNINSTALLATION
-• In Fusion 360: Tools ▸ Scripts and Add-Ins ▸ Add-Ins tab, select the add-in,
-  click Unload, then close Fusion.
-• To fully remove, delete the add-in folder "LensSizeThreads.bundle" from your
-  Fusion add-ins directory, and (optionally) delete "LensSizeThreads.xml" from
-  every Fusion ThreadData folder:
-  Windows: %LOCALAPPDATA%\Autodesk\webdeploy\Production\<version>\Fusion\Server\Fusion\Configuration\ThreadData
-  macOS: ~/Library/Application Support/Autodesk/Webdeploy/production/<version>/Autodesk Fusion 360.app/Contents/Resources/.../Configuration/ThreadData
+```
 ```
 
 **Support Information** *(plain-text box on the form):*
+
 ```
-Free and open-source. Support is provided via the project's GitHub repository:
-• Issues / bug reports: https://github.com/HairuoLiu/fusion-lens-threads/issues
-• Source, documentation, and updates: https://github.com/HairuoLiu/fusion-lens-threads
-Please open a GitHub issue for questions, missing sizes, or problems. No paid
-support is offered.
 ```
 
-**EULA:** leave the Autodesk standard EULA selected (free product). The MIT
-license + repo link are already stated in the description and in `help.html`
+**EULA:** leave the Autodesk standard EULA selected (free product). The MIT  
+license + repo link are already stated in the description and in `help.html`  
 (shipped inside the bundle), which satisfies the custom-terms disclosure.
 
 ---
@@ -143,33 +119,34 @@ license + repo link are already stated in the description and in `help.html`
 ## 3. Screenshots to upload (pick up to 10)
 
 From `docs/images/` (all PNG, safe to use):
+
 1. `thread-type-dropdown.png` — the Thread Type dropdown showing the entry
 2. `fusion-create-thread.png` — the Create Thread dialog with the entry selected
 3. `result-part.png` — the modeled thread result
 4. `install-windows.png` — Windows install step
 5. `designation-list.png` — the 0.75 / 1.0 mm pitch choice
 
-(If Autodesk complains about PPI, open each in any editor and re-export at
+(If Autodesk complains about PPI, open each in any editor and re-export at  
 96 PPI; dimensions are already within the 2000×2000 limit.)
 
 ---
 
 ## 4. Step-by-step submission
 
-1. Go to **https://apps.autodesk.com** → choose **Fusion 360**.
-2. Scroll to the bottom → click **"Autodesk App Store developers!"** to open the
-   **Publisher Corner** (or go to https://aps.autodesk.com/node/3040).
-3. Sign in with your **Autodesk account (SSO)** and accept the **Publisher
+1. Go to **<https://apps.autodesk.com>** → choose **Fusion 360**.
+2. Scroll to the bottom → click **"Autodesk App Store developers!"** to open the  
+   **Publisher Corner** (or go to <https://aps.autodesk.com/node/3040>).
+3. Sign in with your **Autodesk account (SSO)** and accept the **Publisher  
    Agreement**. *(Free products do NOT require a PayPal account.)*
 4. Click **"Submit a new app"** → choose **Desktop based app → Add-in/Extension**.
 5. Fill the fields from section 2 (title, description, version `1.1.0`, Free).
 6. Upload `LensSizeThreads-AppStore-v1.1.0.zip` as the **app package**.
 7. Upload `appstore-icon-120x120.png` for **icon** and **logo**.
 8. Upload the 5 screenshots from section 3.
-9. Select **Windows** and **Mac** (clone the submission for the second OS if the
+9. Select **Windows** and **Mac** (clone the submission for the second OS if the  
    form only allows one per submission).
-10. Submit. Review is typically **~24 h for the initial response, up to ~2 weeks**
-    for full approval. Autodesk's ADN team tests it and generates the final
+10. Submit. Review is typically **~24 h for the initial response, up to ~2 weeks**  
+    for full approval. Autodesk's ADN team tests it and generates the final  
     installer (MSI/dmg) for you.
 
 ---
@@ -183,6 +160,7 @@ python build_appstore_bundle.py        # regenerates the .bundle + zip
 ```
 
 Official references:
-- Publisher Corner: https://aps.autodesk.com/node/3040
-- Fusion submission guide: https://aps.autodesk.com/node/3050
-- Getting-started PDF: https://damassets.autodesk.net/content/dam/autodesk/www/pdfs/app-store-getting-started-guide.pdf
+
+- Publisher Corner: <https://aps.autodesk.com/node/3040>
+- Fusion submission guide: <https://aps.autodesk.com/node/3050>
+- Getting-started PDF: <https://damassets.autodesk.net/content/dam/autodesk/www/pdfs/app-store-getting-started-guide.pdf>
