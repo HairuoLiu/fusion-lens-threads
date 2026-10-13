@@ -10,7 +10,7 @@
   <img alt="Platform" src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows-blue">
   <img alt="Dependencies" src="https://img.shields.io/badge/runtime%20deps-none-brightgreen">
   <img alt="Fusion 360" src="https://img.shields.io/badge/Autodesk-Fusion%20360-orange">
-  <img alt="Threads" src="https://img.shields.io/badge/threads-73%20sizes%20%C3%97%202%20pitches-9cf">
+  <img alt="Threads" src="https://img.shields.io/badge/threads-73%20sizes%20%C3%97%202%20pitches%20%2B%20L39%2FLTM-9cf">
   <a href="https://apps.autodesk.com/FUSION/en/Detail/Index?id=4331085586591467927"><img alt="Autodesk App Store" src="https://img.shields.io/badge/Autodesk-App%20Store-orange"></a>
 </p>
 
@@ -25,7 +25,8 @@
 
 > 一键为 Autodesk Fusion 360 添加**所有常见镜头 / 滤镜螺纹**（M39、M40、M42、M43…
 > 直到 127 mm），每个尺寸同时提供 **0.75 mm 与 1.0 mm 两种螺距**，并预留配合间隙，
-> 保证零件能真正拧到一起。附 macOS / Windows 安装脚本，零运行时依赖。
+> 保证零件能真正拧到一起。此外还内置**真正的徕卡螺口 L39 / LTM——39 mm × 26 TPI
+> （0.976923 mm）**，它既不是 0.75 也不是 1.0。附 macOS / Windows 安装脚本，零运行时依赖。
 
 <p align="center">
   <!-- 📷 图片 #3（最关键的一张）：Fusion 螺纹对话框，「螺纹类型」下拉框展开，
@@ -74,6 +75,9 @@ Fusion 360 自带标准的 ISO / UTS 螺纹表，但**没有摄影镜头 / 滤�
   macOS / Windows 均支持，无需在隐藏目录里翻找。
 - 📦 **73 个直径**，覆盖常见镜头 / 滤镜全范围（24 – 127 mm）。
 - 🎯 **每个尺寸两种螺距**——`0.75 mm` 与 `1.0 mm`（如 `M42x1` 卡口、`M42x0.75` 滤镜）。
+- 🎞 **徕卡螺口 L39 / LTM** —— 真实规格是 **26 TPI = 0.976923 mm**，不是 1.0 mm。主螺纹族里叫
+  `M39x1/26-LTM`（60° 牙型），另有独立的 `Leica Thread Mount (L39/LTM)` 螺纹族使用历史上的
+  **Whitworth 55°** 牙型。
 - 🔩 每条都含**外螺纹 (6g) + 内螺纹 (6H)**，按 0.10 mm 配合间隙计算，
   同尺寸外螺可拧入内螺。
 - 🪶 **零运行时依赖**——macOS 用系统自带 `bash`，Windows 用系统自带 `PowerShell`，
@@ -98,6 +102,25 @@ Fusion 360 自带标准的 ISO / UTS 螺纹表，但**没有摄影镜头 / 滤�
 即 **73 个尺寸 × 2 种螺距 ×（外螺 + 内螺）= 292 条螺纹定义**。你点名的 `M39`、
 `M40`、`M42`、`M43` 全部包含。
 
+### 特例：徕卡螺口 L39 / LTM
+
+滤镜螺纹是米制的，但**徕卡螺口不是**：
+
+| 卡口 | 直径 | 螺距 | TPI | 法兰距 |
+|---|---|---|---|---|
+| **L39 / LTM**（徕卡螺口） | 39 mm | **0.976923 mm** | 26 | 28.8 mm |
+| M39（苏系 Zenit、放大机） | 39 mm | 1.0 mm | 25.4 | 45.2 / 28.8 mm |
+| Canon J-mount | 39 mm | 1.058 mm | 24 | 28.8 mm |
+
+`0.976923 mm = 25.4 mm ÷ 26`。本项目提供两个 LTM 选项，螺距都是这个精确值：
+
+- **`Camera Lens and Filter Threads` → `M39x1/26-LTM`**：26 TPI 螺距 + 标准 60° 牙型。
+  3D 打印转接环的务实之选（网上绝大多数 LTM 转接环都按 60° 建模，0.10 mm 间隙足以吸收牙型差异）。
+- **`Leica Thread Mount (L39/LTM)` → `M39x1/26`**：同样螺距，但用历史上的 **Whitworth 55°**
+  牙型与牙高（`d₂ = d − 0.640327·P`、`d₁ = d − 1.280655·P`）。要还原原始牙型时用它。
+
+法兰距 28.8 mm 是机身/镜头的尺寸，不是螺纹尺寸——请在你的模型里自行设定，螺纹文件只定义螺纹。
+
 ## 该用 0.75 还是 1.0？
 
 两种螺距都有存在的理由：**同一个直径数字，可能是滤镜螺纹（0.75 mm），也可能是镜头卡口（1.0 mm）**——靠螺距区分。
@@ -110,11 +133,17 @@ Fusion 360 自带标准的 ISO / UTS 螺纹表，但**没有摄影镜头 / 滤�
 |---|---|---|
 | 螺丝滤镜、镜头盖、遮光罩、滤镜升降环（≤86 mm） | **0.75 mm** | 49、52、67、77 mm 滤镜螺纹 |
 | 大口径滤镜配件（≥95 mm） | **1.0 mm** | 95、105、112、120、127 mm |
-| 转接老镜头螺丝卡口的转接环 | **1.0 mm** | `M42×1` 卡口、`M39×1` 徕卡螺口 |
+| 转接老 **M42** 螺丝卡口镜头 | **1.0 mm** | `M42×1`（Pentax / Praktica） |
+| 转接 **徕卡** 螺丝卡口镜头（L39/LTM） | **26 TPI = 0.976923 mm** | `M39x1/26-LTM` |
 | 不确定 / 通用滤镜件 | 默认 **0.75 mm** | 稳妥选择 |
 
 **容易混的尺寸：**
-- **M39**：`M39×0.75` = 39 mm 滤镜螺纹；`M39×1.0` = 徕卡螺口（旁轴老镜头）。同数字不同用途。
+- **M39**（同一个数字代表三样东西，务必看螺距）：
+  - `M39×0.75` → 39 mm **滤镜螺纹**。
+  - `M39×1.0` → 苏系 **Zenit M39** / 放大机 M39（DIN 1 mm 螺纹）。
+  - `M39x1/26-LTM` → 真正的**徕卡螺口**，**26 TPI = 0.976923 mm**。徕茨当年沿用显微镜
+    （RMS 螺纹）的 Whitworth 牙型工具，所以螺距不是整数的米制值。1.0 mm 的转接环
+    无法与真正的 LTM 镜头正确配合。
 - **M40 / 40.5**：滤镜螺纹 → `0.75 mm`。
 - **M42**：`M42×0.75` = 42 mm 滤镜螺纹；`M42×1.0` = 著名单反螺丝卡口（转接环用 1.0）。
 - **M43**：滤镜螺纹 → `0.75 mm`。
@@ -169,11 +198,13 @@ chmod +x install_mac.sh
 ./install_mac.sh
 ```
 
-脚本会自动找到 Fusion 的 `ThreadData` 目录并写入 `LensSizeThreads.xml`。
+脚本会自动找到 Fusion 的 `ThreadData` 目录，并写入两个文件：`LensSizeThreads.xml`
+（滤镜螺纹 + `M39x1/26-LTM`）和 `LensMountThreads.xml`（L39/LTM，Whitworth 55°）。
 
 **第二步 — 重启 Fusion 360**（完全退出再打开）。
 
-**第三步 — 验证：** 打开螺纹命令，在「螺纹类型」下拉框里找到 `Camera Lens and Filter Threads`。完成 ✅
+**第三步 — 验证：** 打开螺纹命令，在「螺纹类型」下拉框里找到 `Camera Lens and Filter Threads`
+与 `Leica Thread Mount (L39/LTM)`。完成 ✅
 
 常用参数：
 
@@ -200,7 +231,11 @@ powershell -ExecutionPolicy Bypass -File install_windows.ps1
 
 **第二步 — 重启 Fusion 360**（完全退出再打开）。
 
-**第三步 — 验证：** 打开螺纹命令 →「螺纹类型」下拉框里已出现 `Camera Lens and Filter Threads`。完成 ✅
+**第三步 — 验证：** 打开螺纹命令 →「螺纹类型」下拉框里已出现 `Camera Lens and Filter Threads`
+（39 mm 下有 `M39x1/26-LTM`）以及 `Leica Thread Mount (L39/LTM)`。完成 ✅
+
+> 安装脚本会往每个检测到的 `ThreadData` 目录写入**两个**文件：
+> `LensSizeThreads.xml` 和 `LensMountThreads.xml`。
 
 常用参数：
 
@@ -213,8 +248,8 @@ powershell -ExecutionPolicy Bypass -File install_windows.ps1 -OutputDir "C:\路�
 
 若自动搜索失败（安装位置非标准），可手动复制成品 XML：
 
-1. 从本仓库取 `LensSizeThreads.xml`。
-2. 放进 Fusion 的 `ThreadData` 目录：
+1. 从本仓库取 **两个文件**：`LensSizeThreads.xml` 与 `LensMountThreads.xml`。
+2. 都放进 Fusion 的 `ThreadData` 目录：
    - **macOS：**
      `~/Library/Application Support/Autodesk/Webdeploy/production/<版本ID>/Autodesk Fusion 360.app/Contents/Libraries/Applications/Fusion/Fusion/Server/Fusion/Configuration/ThreadData`
    - **Windows：**
@@ -234,7 +269,8 @@ powershell -ExecutionPolicy Bypass -File install_windows.ps1 -OutputDir "C:\路�
 然后设置 **螺纹类型 → `Camera Lens and Filter Threads`**。
 
 **4.** 选择 **尺寸 (Size)** 和 **规格 (Designation)**——如 M42 卡口选 `M42x1`，
-42 mm 滤镜螺纹选 `M42x0.75`。
+42 mm 滤镜螺纹选 `M42x0.75`，徕卡螺口选 `M39x1/26-LTM`（或改用
+`Leica Thread Mount (L39/LTM)` 螺纹族）。
 
 **5.** 若要做内螺纹（镜头拧入的环），再勾选 **内部 (Internal)**，点 **确定**。
 
@@ -282,19 +318,43 @@ Fusion 360 每次大版本更新都会生成**新的** `ThreadData` 版本目录
 适合打印的间隙配合。详细算法与 Fusion XML 结构
 （`<ThreadType> → <ThreadSize> → <Designation> → <Thread>`）见 `generate_lens_threads.py`。
 
+第二个螺纹族使用 **Whitworth 55° 牙型**：
+
+- 中径 `d₂ = d − 0.640327·P`
+- 小径 `d₁ = d − 1.280655·P`
+
+其中徕卡螺口 `P = 25.4 ÷ 26 = 0.976923 mm`。Fusion 依据「大径 / 中径 / 小径 + 牙型角」
+生成螺纹，因此 55° 螺纹族比 60° 近似更接近历史上的 LTM 牙型；不过两者中径只差约
+0.02 mm，3D 打印时 60° 的那一项通常已经够用。
+
+| | `Camera Lens and Filter Threads` | `Leica Thread Mount (L39/LTM)` |
+|---|---|---|
+| 文件 | `LensSizeThreads.xml` | `LensMountThreads.xml` |
+| 牙型角 | 60°（ISO 米制） | 55°（Whitworth） |
+| 内容 | 73 尺寸 × 0.75/1.0 mm + `M39x1/26-LTM` | `M39x1/26`（26 TPI） |
+| 用途 | 滤镜、遮光罩、升降环、M42 转接环 | 真正的徕卡螺口转接环 |
+
 ## 二次开发 / 测试
 
-改 `generate_lens_threads.py` 顶部两个列表即可增删尺寸 / 螺距：
+改 `generate_lens_threads.py` 顶部的列表即可增删尺寸 / 螺距：
 
 ```python
 SIZES   = [24, 25, 25.5, ...]   # 公称直径 (mm)
 PITCHES = [0.75, 1.0]           # 螺距 (mm)
+
+# 非米制卡口：(尺寸, 规格名, 螺距)
+SPECIAL_DESIGNATIONS = [(39, "M39x1/26-LTM", 25.4 / 26.0)]
+
+# 第二个螺纹族：Whitworth 55° 卡口
+LTM_SIZES = [(39, "M39x1/26", 25.4 / 26.0)]
 ```
+
+螺距按 6 位小数输出（`fmt_pitch`），因此 26 TPI 这类英制来源的螺距不会丢精度。
 
 重新生成并校验（需 Python 3.8+）：
 
 ```bash
-python generate_lens_threads.py          # 生成 LensSizeThreads.xml
+python generate_lens_threads.py          # 生成两个 XML 文件
 python tests/test_threads.py             # 校验 尺寸/螺距/内外螺/直径
 python tests/compare_outputs.py \
     LensSizeThreads.xml \
@@ -312,7 +372,8 @@ fusion-lens-threads/
 ├── install_mac.sh            # macOS 安装脚本（自动搜索路径 + 生成 + 写入）
 ├── install_windows.ps1       # Windows 安装脚本（同上，PowerShell，无 BOM 的 UTF-8）
 ├── generate_lens_threads.py  # Python 生成器（跨平台，便于二次开发）
-├── LensSizeThreads.xml       # 已生成的成品，可直接手动复制
+├── LensSizeThreads.xml       # 成品：滤镜螺纹 + 0.75/1.0 mm + M39x1/26-LTM
+├── LensMountThreads.xml      # 成品：L39/LTM，Whitworth 55°，26 TPI
 ├── tests/
 │   ├── test_threads.py       # 结构 / 几何校验
 │   └── compare_outputs.py    # 三个生成器一致性校验

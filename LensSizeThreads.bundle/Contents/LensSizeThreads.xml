@@ -619,6 +619,25 @@
         <MinorDia>38.0175</MinorDia>
       </Thread>
     </Designation>
+    <Designation>
+      <ThreadDesignation>M39x1/26-LTM</ThreadDesignation>
+      <CTD>M39x1/26-LTM</CTD>
+      <Pitch>0.976923</Pitch>
+      <Thread>
+        <Gender>external</Gender>
+        <Class>6g</Class>
+        <MajorDia>38.9</MajorDia>
+        <PitchDia>38.2655</PitchDia>
+        <MinorDia>37.8424</MinorDia>
+      </Thread>
+      <Thread>
+        <Gender>internal</Gender>
+        <Class>6H</Class>
+        <MajorDia>39.1</MajorDia>
+        <PitchDia>38.4655</PitchDia>
+        <MinorDia>38.0424</MinorDia>
+      </Thread>
+    </Designation>
   </ThreadSize>
   <ThreadSize>
     <Size>40</Size>

@@ -10,7 +10,7 @@
   <img alt="Platform" src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows-blue">
   <img alt="Dependencies" src="https://img.shields.io/badge/runtime%20deps-none-brightgreen">
   <img alt="Fusion 360" src="https://img.shields.io/badge/Autodesk-Fusion%20360-orange">
-  <img alt="Threads" src="https://img.shields.io/badge/threads-73%20sizes%20%C3%97%202%20pitches-9cf">
+  <img alt="Threads" src="https://img.shields.io/badge/threads-73%20sizes%20%C3%97%202%20pitches%20%2B%20L39%2FLTM-9cf">
   <a href="https://apps.autodesk.com/FUSION/en/Detail/Index?id=4331085586591467927"><img alt="Autodesk App Store" src="https://img.shields.io/badge/Autodesk-App%20Store-orange"></a>
   <a href="#contributing"><img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-success"></a>
 </p>
@@ -28,7 +28,9 @@
 > A one-click custom thread library that adds **every common camera-lens and
 > filter thread** (M39, M40, M42, M43 … up to 127 mm) to Autodesk Fusion 360 —
 > each in **both 0.75 mm and 1.0 mm pitch**, with proper clearance so parts
-> actually screw together. macOS & Windows installers, zero runtime dependencies.
+> actually screw together. It also adds the **true Leica Thread Mount —
+> L39 / LTM, 39 mm × 26 TPI (0.976923 mm)**, which is neither 0.75 nor 1.0 mm.
+> macOS & Windows installers, zero runtime dependencies.
 
 <p align="center">
   <!-- 📷 IMAGE #3 (the money shot): Fusion Thread dialog with the Thread Type
@@ -80,6 +82,10 @@ the size and pitch from the dropdown — like any built-in thread.
 - 📦 **73 diameters** covering the full common lens/filter range (24 – 127 mm).
 - 🎯 **Two pitches per size** — `0.75 mm` and `1.0 mm` (e.g. `M42x1` mount and
   `M42x0.75` filter thread).
+- 🎞 **Leica Thread Mount (L39 / LTM)** — the real mount is **26 TPI =
+  0.976923 mm**, not 1.0 mm. Available as `M39x1/26-LTM` in the main family
+  (60° profile) and as `M39x1/26` in a second family with the historically
+  correct **Whitworth 55°** flank angle.
 - 🔩 **External (6g) + internal (6H)** for every entry, with a 0.10 mm fit
   clearance so an external thread screws into an internal one of the same size.
 - 🪶 **Zero runtime dependencies** — macOS uses the built-in `bash`, Windows uses
@@ -104,6 +110,30 @@ All diameters (mm), each available in **0.75 mm** and **1.0 mm** pitch:
 That's **73 sizes × 2 pitches × (external + internal) = 292 thread definitions**.
 The commonly requested `M39`, `M40`, `M42`, `M43` are all included.
 
+### The oddball: Leica Thread Mount (L39 / LTM)
+
+Photographic filter threads are metric, but the **Leica Thread Mount is not**:
+
+| Mount | Diameter | Pitch | TPI | Flange focus |
+|---|---|---|---|---|
+| **L39 / LTM** (Leica screw mount) | 39 mm | **0.976923 mm** | 26 | 28.8 mm |
+| M39 (Soviet/Zenit, enlarger) | 39 mm | 1.0 mm | 25.4 | 45.2 / 28.8 mm |
+| Canon J-mount | 39 mm | 1.058 mm | 24 | 28.8 mm |
+
+`0.976923 mm = 25.4 mm / 26`. Both LTM families here use that exact pitch:
+
+- **`Camera Lens and Filter Threads` → `M39x1/26-LTM`** — 26 TPI pitch on a
+  standard 60° profile. This is the pragmatic choice for 3D-printed adapters
+  (most published LTM adapters are modelled at 60°, and the 0.10 mm clearance
+  absorbs the profile difference).
+- **`Leica Thread Mount (L39/LTM)` → `M39x1/26`** — the same pitch with the
+  original **Whitworth 55°** flank angle and Whitworth depths
+  (`d₂ = d − 0.640327·P`, `d₁ = d − 1.280655·P`). Use this when you want the
+  historically correct form.
+
+Flange focal distance (28.8 mm for LTM) is a body/lens dimension, not a thread
+dimension — set it in your model, the thread file only defines the thread.
+
 ## Which pitch should I use? 0.75 mm vs 1.0 mm
 
 Both pitches exist for a reason: **the same diameter number can be a filter
@@ -122,12 +152,18 @@ apart.
 |---|---|---|
 | A screw-in filter, cap, hood, or filter step-ring (≤ 86 mm) | **0.75 mm** | 49, 52, 67, 77 mm filter threads |
 | A large filter accessory (≥ 95 mm) | **1.0 mm** | 95, 105, 112, 120, 127 mm |
-| An adapter to a vintage screw-mount lens | **1.0 mm** | `M42×1` mount, `M39×1` LTM |
+| An adapter to a vintage **M42** screw-mount lens | **1.0 mm** | `M42×1` (Pentax/Praktica) |
+| An adapter to a **Leica** screw-mount lens (L39/LTM) | **26 TPI = 0.976923 mm** | `M39x1/26-LTM` |
 | Unsure / generic filter part | default to **0.75 mm** | safe choice |
 
 **Concrete size notes (the ones people mix up)**
-- **M39**: `M39×0.75` = a 39 mm filter thread; `M39×1.0` = Leica Thread
-  Mount (rangefinder lens). Same number, different use.
+- **M39** (three different things share this number — check the pitch):
+  - `M39×0.75` → a 39 mm **filter thread**.
+  - `M39×1.0` → Soviet **Zenit M39** / enlarger M39 (a DIN 1 mm thread).
+  - `M39x1/26-LTM` → the real **Leica Thread Mount**, **26 TPI = 0.976923 mm**.
+    Leitz used a Whitworth-form thread because the plant already made
+    microscopes (RMS thread), which is why the pitch is not a round metric
+    number. A 1.0 mm adapter will *not* correctly mate with a true LTM lens.
 - **M40 / 40.5**: filter threads → `0.75 mm`.
 - **M42**: `M42×0.75` = 42 mm filter thread; `M42×1.0` = the famous SLR
   screw mount (use 1.0 for adapters).
@@ -190,13 +226,14 @@ chmod +x install_mac.sh
 ./install_mac.sh
 ```
 
-The script finds your Fusion `ThreadData` folder automatically and writes
-`LensSizeThreads.xml` into it.
+The script finds your Fusion `ThreadData` folder automatically and writes both
+thread files into it: `LensSizeThreads.xml` (filters + `M39x1/26-LTM`) and
+`LensMountThreads.xml` (L39/LTM, Whitworth 55°).
 
 **Step 2 — Restart Fusion 360** (fully quit and reopen).
 
 **Step 3 — Verify:** open the Thread command and look for `Camera Lens and Filter Threads`
-in the Thread Type dropdown. Done ✅
+and `Leica Thread Mount (L39/LTM)` in the Thread Type dropdown. Done ✅
 
 Handy flags:
 
@@ -224,7 +261,11 @@ powershell -ExecutionPolicy Bypass -File install_windows.ps1
 **Step 2 — Restart Fusion 360** (fully quit and reopen).
 
 **Step 3 — Verify:** open the Thread command → the Thread Type dropdown now
-lists `Camera Lens and Filter Threads`. Done ✅
+lists `Camera Lens and Filter Threads` (with `M39x1/26-LTM` under Size 39) and
+`Leica Thread Mount (L39/LTM)`. Done ✅
+
+> The installer writes **two** files into every detected `ThreadData` folder:
+> `LensSizeThreads.xml` and `LensMountThreads.xml`.
 
 Handy flags:
 
@@ -238,8 +279,8 @@ powershell -ExecutionPolicy Bypass -File install_windows.ps1 -OutputDir "C:\path
 If auto-detection fails (unusual install location), copy the pre-built XML
 yourself:
 
-1. Grab `LensSizeThreads.xml` from this repo.
-2. Drop it into your Fusion `ThreadData` folder:
+1. Grab **both** `LensSizeThreads.xml` and `LensMountThreads.xml` from this repo.
+2. Drop them into your Fusion `ThreadData` folder:
    - **macOS:**
      `~/Library/Application Support/Autodesk/Webdeploy/production/<version-id>/Autodesk Fusion 360.app/Contents/Libraries/Applications/Fusion/Fusion/Server/Fusion/Configuration/ThreadData`
    - **Windows:**
@@ -312,20 +353,45 @@ by the same amount, so a same-size external/internal pair mates with a light,
 printable clearance. See `generate_lens_threads.py` for the exact math and the
 Fusion XML schema (`<ThreadType> → <ThreadSize> → <Designation> → <Thread>`).
 
+The second family uses the **Whitworth 55°** form instead:
+
+- `d₂ = d − 0.640327·P`
+- `d₁ = d − 1.280655·P`
+
+with `P = 25.4 / 26 = 0.976923 mm` for the L39 / LTM mount. Because Fusion
+models threads from (major, pitch, minor) diameters plus the flank angle, a
+55° family reproduces the historical LTM profile far better than a 60°
+approximation — but for 3D printing the difference is ~0.02 mm on the pitch
+diameter, so the 60° entry is usually good enough.
+
+| | `Camera Lens and Filter Threads` | `Leica Thread Mount (L39/LTM)` |
+|---|---|---|
+| File | `LensSizeThreads.xml` | `LensMountThreads.xml` |
+| Flank angle | 60° (ISO metric) | 55° (Whitworth) |
+| Contents | 73 sizes × 0.75/1.0 mm + `M39x1/26-LTM` | `M39x1/26` (26 TPI) |
+| Use for | filters, hoods, step rings, M42 adapters | true Leica screw-mount adapters |
+
 ## Customizing / development
 
-Add or remove sizes/pitches by editing two lists at the top of
+Add or remove sizes/pitches by editing the lists at the top of
 `generate_lens_threads.py`:
 
 ```python
 SIZES   = [24, 25, 25.5, ...]   # nominal diameters in mm
 PITCHES = [0.75, 1.0]           # pitches in mm
+
+# Non-metric mounts: (size, designation label, pitch)
+SPECIAL_DESIGNATIONS = [(39, "M39x1/26-LTM", 25.4 / 26.0)]
+
+# Second family: Whitworth 55 deg mounts
+LTM_SIZES = [(39, "M39x1/26", 25.4 / 26.0)]
 ```
 
-Regenerate and validate (Python 3.8+):
+Pitch values are printed with 6 decimals (`fmt_pitch`) so imperial-derived
+pitches such as 26 TPI keep their precision:
 
 ```bash
-python generate_lens_threads.py          # writes LensSizeThreads.xml
+python generate_lens_threads.py          # writes both XML files
 python tests/test_threads.py             # validates sizes/pitches/genders/diameters
 python tests/compare_outputs.py \
     LensSizeThreads.xml \
@@ -343,7 +409,8 @@ fusion-lens-threads/
 ├── install_mac.sh            # macOS installer (auto-detect path + generate + write)
 ├── install_windows.ps1       # Windows installer (same, PowerShell, UTF-8 no BOM)
 ├── generate_lens_threads.py  # Python generator (cross-platform, for tweaking)
-├── LensSizeThreads.xml       # pre-built output — copy manually if you like
+├── LensSizeThreads.xml       # pre-built: filters + 0.75/1.0 mm + M39x1/26-LTM
+├── LensMountThreads.xml      # pre-built: L39/LTM, Whitworth 55 deg, 26 TPI
 ├── tests/
 │   ├── test_threads.py       # schema/geometry validation
 │   └── compare_outputs.py    # cross-generator equality check

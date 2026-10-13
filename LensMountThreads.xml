@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ThreadType>
+  <Name>Leica Thread Mount (L39/LTM)</Name>
+  <CustomName>Leica Thread Mount (L39/LTM)</CustomName>
+  <Unit>mm</Unit>
+  <Angle>55</Angle>
+  <SortOrder>101</SortOrder>
+  <ThreadSize>
+    <Size>39</Size>
+    <Designation>
+      <ThreadDesignation>M39x1/26</ThreadDesignation>
+      <CTD>M39x1/26</CTD>
+      <Pitch>0.976923</Pitch>
+      <Thread>
+        <Gender>external</Gender>
+        <Class>6g</Class>
+        <MajorDia>38.9</MajorDia>
+        <PitchDia>38.2744</PitchDia>
+        <MinorDia>37.6489</MinorDia>
+      </Thread>
+      <Thread>
+        <Gender>internal</Gender>
+        <Class>6H</Class>
+        <MajorDia>39.1</MajorDia>
+        <PitchDia>38.4744</PitchDia>
+        <MinorDia>37.8489</MinorDia>
+      </Thread>
+    </Designation>
+  </ThreadSize>
+</ThreadType>

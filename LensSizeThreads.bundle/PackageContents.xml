@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ApplicationPackage SchemaVersion="1.0" AppVersion="1.1.0"
+<ApplicationPackage SchemaVersion="1.0" AppVersion="1.2.0"
     Author="HairuoLiu"
     Name="Camera Lens and Filter Threads"
-    Description="Adds camera lens and filter thread sizes (24-127 mm, 0.75/1.0 mm pitch) to Fusion 360's Thread Type dropdown."
+    Description="Adds camera lens and filter thread sizes (24-127 mm, 0.75/1.0 mm pitch) plus the Leica Thread Mount (L39/LTM, 39 mm x 26 TPI = 0.976923 mm, incl. a Whitworth 55 deg family) to Fusion 360's Thread Type dropdown."
     Icon="./Contents/icon.png"
     Helpfile="./Contents/help.html"
     ProductCode="{4C9CEE75-415B-4B3C-82B2-B91EFB0234DF}"

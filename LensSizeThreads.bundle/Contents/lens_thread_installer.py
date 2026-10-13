@@ -44,11 +44,17 @@ def run(context):
     except:
         return
     try:
-        src = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                           'LensSizeThreads.xml')
-        if not os.path.exists(src):
-            _ui.messageBox('LensSizeThreads.xml not found next to the add-in. '
-                           'Please reinstall the add-in.',
+        here = os.path.dirname(os.path.abspath(__file__))
+        # Both families are shipped by the add-in:
+        #   LensSizeThreads.xml  - filter/lens threads (0.75 / 1.0 mm) + the
+        #                          Leica Thread Mount pitch M39x1/26-LTM
+        #   LensMountThreads.xml - L39 / LTM with the Whitworth 55 deg form
+        payloads = ['LensSizeThreads.xml', 'LensMountThreads.xml']
+        sources = [(name, os.path.join(here, name)) for name in payloads]
+        missing = [n for n, s in sources if not os.path.exists(s)]
+        if missing:
+            _ui.messageBox('%s not found next to the add-in. '
+                           'Please reinstall the add-in.' % ', '.join(missing),
                            'Camera Lens and Filter Threads')
             return
         folders = find_thread_data_folders()
@@ -56,30 +62,34 @@ def run(context):
             _ui.messageBox(
                 'Could not locate any Fusion 360 ThreadData folder.\n\n'
                 'Your Fusion install may be in a non-standard location. '
-                'As a fallback, copy LensSizeThreads.xml from this add-in\'s '
+                'As a fallback, copy the thread XML files from this add-in\'s '
                 'folder into Fusion\'s ThreadData directory manually, then '
                 'restart Fusion.', 'Camera Lens and Filter Threads')
             return
         copied = 0
         for td in folders:
-            dest = os.path.join(td, 'LensSizeThreads.xml')
-            try:
-                if (not os.path.exists(dest)) or \
-                   os.path.getmtime(src) > os.path.getmtime(dest):
-                    shutil.copy2(src, dest)
-                    copied += 1
-            except Exception:
-                pass
+            for name, src in sources:
+                dest = os.path.join(td, name)
+                try:
+                    if (not os.path.exists(dest)) or \
+                       os.path.getmtime(src) > os.path.getmtime(dest):
+                        shutil.copy2(src, dest)
+                        copied += 1
+                except Exception:
+                    pass
         if copied:
             _ui.messageBox(
-                'Installed "Camera Lens and Filter Threads" into %d Fusion '
-                'configuration folder(s).\n\nRestart Fusion 360 to see it in '
-                'the Thread Type dropdown.' % copied,
+                'Installed %d thread file(s):\n'
+                '  - Camera Lens and Filter Threads (incl. M39x1/26-LTM)\n'
+                '  - Leica Thread Mount (L39/LTM, Whitworth 55 deg)\n\n'
+                'into %d Fusion configuration folder(s).\n\n'
+                'Restart Fusion 360 to see them in the Thread Type dropdown.'
+                % (copied, len(folders)),
                 'Camera Lens and Filter Threads')
         else:
             _ui.messageBox(
-                '"Camera Lens and Filter Threads" is already installed.\n\n'
-                'Restart Fusion 360 if it does not appear in the Thread Type '
+                'Both thread families are already installed.\n\n'
+                'Restart Fusion 360 if they do not appear in the Thread Type '
                 'dropdown.', 'Camera Lens and Filter Threads')
     except:
         if _ui:

@@ -6,7 +6,12 @@ PowerShell) and assert they describe the SAME threads (same sizes, pitches,
 genders, classes) with diameters matching within 0.01 mm.
 
 Usage:
+  # filter/lens family only
   python tests/compare_outputs.py <py.xml> <mac.xml> <win.xml>
+
+  # both families (lens trio first, then the Leica/LTM trio)
+  python tests/compare_outputs.py <py.xml> <mac.xml> <win.xml> \
+                                  <py-ltm.xml> <mac-ltm.xml> <win-ltm.xml>
 """
 import sys
 import xml.etree.ElementTree as ET
@@ -29,32 +34,44 @@ def collect(path):
     return rows
 
 
-def main():
-    if len(sys.argv) != 4:
-        print("usage: compare_outputs.py py.xml mac.xml win.xml")
-        sys.exit(2)
-    py, mac, win = (collect(p) for p in sys.argv[1:])
-
+def compare(label, files):
+    groups = [collect(p) for p in files]
+    base = groups[0]
     ok = True
-    if py != mac:
-        ok = False
-        print("DIFF py vs mac:")
-        for r in sorted(py ^ mac)[:20]:
-            print("  ", r)
-    if py != win:
-        ok = False
-        print("DIFF py vs win:")
-        for r in sorted(py ^ win)[:20]:
-            print("  ", r)
+    names = ("py", "mac", "win")
+    for i, rows in enumerate(groups[1:], start=1):
+        if rows != base:
+            ok = False
+            print("DIFF [{}] py vs {}:".format(label, names[i]))
+            for r in sorted(base ^ rows)[:20]:
+                print("  ", r)
+    print("{}: {} - all three generators agree ({} threads each)".format(
+        "OK" if ok else "FAIL", label, len(base)))
+    return ok
 
-    if ok:
-        print("OK: all three generators produce identical threads ({} threads each)".format(len(py)))
-        print("  sample: M42x1 external  ->",
-              [r for r in py if r[0] == 42 and r[1] == 1.0 and r[2] == "external"][0])
-        print("  sample: M42x1 internal  ->",
-              [r for r in py if r[0] == 42 and r[1] == 1.0 and r[2] == "internal"][0])
-        sys.exit(0)
-    sys.exit(1)
+
+def main():
+    files = sys.argv[1:]
+    if len(files) == 3:
+        groups = [("LensSizeThreads", files)]
+    elif len(files) == 6:
+        groups = [("LensSizeThreads", files[:3]), ("LensMountThreads", files[3:])]
+    else:
+        print("usage: compare_outputs.py py.xml mac.xml win.xml "
+              "[py-ltm.xml mac-ltm.xml win-ltm.xml]")
+        sys.exit(2)
+
+    ok = all(compare(label, f) for label, f in groups)
+
+    lens_rows = collect(groups[0][1][0])
+    ltm = [r for r in lens_rows if abs(r[1] - 25.4 / 26.0) < 1e-6]
+    if ltm:
+        print("  LTM entry (26 TPI):", sorted(ltm)[0])
+    else:
+        print("  WARNING: no 26 TPI (0.976923 mm) entry found in the lens family")
+        ok = False
+
+    sys.exit(0 if ok else 1)
 
 
 if __name__ == "__main__":
