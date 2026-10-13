@@ -13,7 +13,7 @@ Checks on LensSizeThreads.xml:
   * every diameter in SIZES is present as a <ThreadSize>
   * every size has BOTH pitch 0.75 and 1.0 designations
   * every SPECIAL_DESIGNATIONS entry is present with its exact pitch
-    (e.g. M39x1/26-LTM at 0.976923 mm = 26 TPI)
+    (e.g. L39x1/26-LTM at 0.976923 mm = 26 TPI)
   * every designation has both external (6g) and internal (6H) threads
   * MajorDia > PitchDia > MinorDia > 0 for every thread
 

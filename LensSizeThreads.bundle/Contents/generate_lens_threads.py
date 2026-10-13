@@ -8,7 +8,7 @@ Two files are produced:
   1. LensSizeThreads.xml  ->  family "Camera Lens and Filter Threads" (60 deg)
      Every common lens / filter diameter (24 .. 127 mm) in 0.75 mm and 1.0 mm
      pitch, PLUS the special Leica Thread Mount pitch on 39 mm:
-     M39 x 1/26" (26 TPI) = 25.4/26 = 0.976923 mm  ->  "M39x1/26-LTM".
+     L39 x 1/26" (26 TPI) = 25.4/26 = 0.976923 mm  ->  "L39x1/26-LTM".
 
   2. LensMountThreads.xml ->  family "Leica Thread Mount (L39/LTM)" (55 deg)
      The historically correct Whitworth-form L39 mount: 39 mm x 26 TPI with a
@@ -66,12 +66,16 @@ PITCHES = [0.75, 1.0]
 # ---------------------------------------------------------------------------
 # Leica Thread Mount (L39 / LTM / LSM): 39 mm diameter, 26 threads per inch.
 # Pitch = 25.4 mm / 26 = 0.976923 mm.  NOT 1.0 mm and NOT 0.75 mm.
+#
+# Naming: "L39" / "LTM" / "LSM" all mean this same mount. The popular "M39"
+# label is ambiguous - a true metric M39x1 (Zenit / enlarger, 1.0 mm) is a
+# DIFFERENT thread - so the designation is prefixed L39, not M39.
 LTM_PITCH = 25.4 / 26.0
 
 # (nominal size, designation label, pitch) - appended to the standard
 # designations of that size.
 SPECIAL_DESIGNATIONS = [
-    (39, "M39x1/26-LTM", LTM_PITCH),
+    (39, "L39x1/26-LTM", LTM_PITCH),
 ]
 
 # Second family: the same mount with the correct Whitworth 55 deg flank angle.
@@ -79,7 +83,7 @@ LTM_FAMILY_NAME = "Leica Thread Mount (L39/LTM)"
 LTM_ANGLE = 55.0
 LTM_SORT_ORDER = 101
 LTM_SIZES = [
-    (39, "M39x1/26", LTM_PITCH),  # L39 / LTM, 26 TPI, flange focus 28.8 mm
+    (39, "L39x1/26", LTM_PITCH),  # L39 / LTM, 26 TPI, flange focus 28.8 mm
 ]
 
 # Whitworth form constants (radial depth of one flank = 0.640327 P).

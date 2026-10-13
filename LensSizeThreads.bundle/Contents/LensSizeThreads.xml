@@ -620,8 +620,8 @@
       </Thread>
     </Designation>
     <Designation>
-      <ThreadDesignation>M39x1/26-LTM</ThreadDesignation>
-      <CTD>M39x1/26-LTM</CTD>
+      <ThreadDesignation>L39x1/26-LTM</ThreadDesignation>
+      <CTD>L39x1/26-LTM</CTD>
       <Pitch>0.976923</Pitch>
       <Thread>
         <Gender>external</Gender>

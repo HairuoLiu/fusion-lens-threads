@@ -43,7 +43,7 @@ PITCHES=(0.75 1.0)
 # Pitch = 25.4 mm / 26 = 0.976923 mm (NOT 1.0 mm, NOT 0.75 mm).
 LTM_PITCH=$(awk 'BEGIN{printf "%.15f", 25.4/26}')
 SPECIAL_SIZES=(39)
-SPECIAL_LABELS=("M39x1/26-LTM")
+SPECIAL_LABELS=("L39x1/26-LTM")
 SPECIAL_PITCHES=("$LTM_PITCH")
 
 # Second family: correct Whitworth 55 degree flank angle for the L39 mount.
@@ -51,7 +51,7 @@ LTM_FAMILY_NAME="Leica Thread Mount (L39/LTM)"
 LTM_ANGLE="55"
 LTM_SORT_ORDER="101"
 LTM_SIZES=(39)
-LTM_LABELS=("M39x1/26")
+LTM_LABELS=("L39x1/26")
 LTM_PITCHES=("$LTM_PITCH")
 WHITWORTH_DEPTH="0.640327"
 

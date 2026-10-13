@@ -5,7 +5,7 @@ pitch is neither 0.75 mm nor 1.0 mm.
 
 ## What's new
 
-- **`M39x1/26-LTM`** in the `Camera Lens and Filter Threads` family:
+- **`L39x1/26-LTM`** in the `Camera Lens and Filter Threads` family:
   39 mm × **26 TPI = 25.4 / 26 = 0.976923 mm** on the standard 60° profile.
   Previously the 39 mm entry only offered 0.75 mm and 1.0 mm, neither of which
   is the real Leica screw mount.
@@ -39,10 +39,10 @@ A 1.0 mm adapter does not correctly mate with a true LTM lens.
 ## Which entry should I use?
 
 - **3D printing an adapter** → `Camera Lens and Filter Threads` →
-  `M39x1/26-LTM` (60°). The profile difference vs 55° is ~0.02 mm on the pitch
+  `L39x1/26-LTM` (60°). The profile difference vs 55° is ~0.02 mm on the pitch
   diameter and is absorbed by the built-in 0.10 mm clearance.
 - **Historically correct geometry / machining** → `Leica Thread Mount (L39/LTM)`
-  → `M39x1/26` (Whitworth 55°).
+  → `L39x1/26` (Whitworth 55°).
 
 Flange focal distance (28.8 mm for LTM) is a body/lens dimension, not a thread
 dimension — set it in your model.

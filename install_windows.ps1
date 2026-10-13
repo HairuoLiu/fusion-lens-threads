@@ -46,14 +46,14 @@ $LTM_PITCH = 25.4 / 26.0
 # (Size, Label, Pitch) triples. PSCustomObject avoids PowerShell's automatic
 # flattening of nested arrays (and the int/double hashtable-key pitfall).
 $SPECIAL = @(
-  [pscustomobject]@{ Size = 39; Label = "M39x1/26-LTM"; Pitch = $LTM_PITCH }
+  [pscustomobject]@{ Size = 39; Label = "L39x1/26-LTM"; Pitch = $LTM_PITCH }
 )
 
 # Second family: same mount with the correct Whitworth 55 degree flank angle.
 $LTM_FAMILY_NAME = "Leica Thread Mount (L39/LTM)"
 $LTM_ANGLE       = "55"
 $LTM_SORT_ORDER  = "101"
-$LTM_SIZES       = @([pscustomobject]@{ Size = 39; Label = "M39x1/26"; Pitch = $LTM_PITCH })
+$LTM_SIZES       = @([pscustomobject]@{ Size = 39; Label = "L39x1/26"; Pitch = $LTM_PITCH })
 
 # Whitworth form: radial depth of one flank = 0.640327 * pitch
 $WHITWORTH_DEPTH = 0.640327

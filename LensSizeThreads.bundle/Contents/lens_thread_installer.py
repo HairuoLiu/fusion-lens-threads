@@ -47,7 +47,7 @@ def run(context):
         here = os.path.dirname(os.path.abspath(__file__))
         # Both families are shipped by the add-in:
         #   LensSizeThreads.xml  - filter/lens threads (0.75 / 1.0 mm) + the
-        #                          Leica Thread Mount pitch M39x1/26-LTM
+        #                          Leica Thread Mount pitch L39x1/26-LTM
         #   LensMountThreads.xml - L39 / LTM with the Whitworth 55 deg form
         payloads = ['LensSizeThreads.xml', 'LensMountThreads.xml']
         sources = [(name, os.path.join(here, name)) for name in payloads]
@@ -80,7 +80,7 @@ def run(context):
         if copied:
             _ui.messageBox(
                 'Installed %d thread file(s):\n'
-                '  - Camera Lens and Filter Threads (incl. M39x1/26-LTM)\n'
+                '  - Camera Lens and Filter Threads (incl. L39x1/26-LTM)\n'
                 '  - Leica Thread Mount (L39/LTM, Whitworth 55 deg)\n\n'
                 'into %d Fusion configuration folder(s).\n\n'
                 'Restart Fusion 360 to see them in the Thread Type dropdown.'
